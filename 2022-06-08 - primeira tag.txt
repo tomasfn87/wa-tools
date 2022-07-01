@@ -1,0 +1,40 @@
+2022-06-08
+- Implantadas (com ajuda Estêvão):
+  - tag PageView
+  - tag Scroll
+
+- Tarefa - Implantar tag:
+  - Tipo de tag:
+  - Cliente: Apsen
+  - Produto: É coisa de menino
+  - Evento que dispara cliques nos botões de header
+  - Categoria: Header
+  - Ação: 'Clique'
+  - Rótulo: Texto
+
+  - Acionador: [
+	Somente clicks em links
+	        Em alguns links
+        		Click Classes - regex contém - nav-link|navbar-brand
+
+	
+  ]
+
+  
+
+regex URL botões:
+(?i)(?<base>https?:\/\/ecoisademenino\.com\.br)\/?$|(\g<base>)\/(conteudos\/(educacao|nutricao|comportamento)|o-que-e-fimose|duvidas-frequentes)\/?
+
+
+2022-06-09
+Dúvida: Da onde veio a URL usada no Resource Override?
+R: Vem do arquivo gtm.js, obtido na aba network do DevTools.
+
+
+2022-06-14
+- Implantada a tag de cliques no Header.
+- Publicadas as tags de PageView, Scroll e Header, que estavam no Default Workspace.
+
+- Criada workspace [RCK] Footer. Cliques, Tempo de página
+- Implantar tag de saída de página (além das tags já listadas no notion)
+- Implantada a tag de 

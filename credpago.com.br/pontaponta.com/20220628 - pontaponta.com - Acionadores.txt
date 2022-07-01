@@ -1,0 +1,56 @@
+1 - Cliques - Menu - Itens - seletor css:
+nav.nav ul#menuAcessivel a
+
+2 - Formulário contato - html mensagem sucesso:
+<span class="txtCallout" aria-live="polite" aria-atomic="true" aria-relevant="additions text" role="status">Seu contato foi enviado com sucesso.</span>
+span.txtCallout
+
+ou
+
+<div class="callout success" data-closable="">
+        <span class="txtCallout" aria-live="polite" aria-atomic="true" aria-relevant="additions text" role="status">Seu contato foi enviado com sucesso.</span>
+        <button class="close-button" aria-label="Fechar Alerta" type="button" data-close="">
+            <span aria-hidden="true">×</span>
+        </button>
+    </div>
+div.callout.success
+3 - Formulário contato - html Elemento pai mensagem sucesso. 
+<form class="form" id="formContato" name="formContato" action="action.php" method="post" data-magellan-target="formContato">
+                <input type="hidden" name="form_action" value="contato">
+                <label aria-label="Seu nome" for="input_nome"><input type="text" id="input_nome" name="input_nome" placeholder="Nome" required=""></label>
+                <label aria-label="Seu email" for="input_email"><input type="email" id="input_email" name="input_email" placeholder="E-Mail" required=""></label> 
+                <button type="submit" class="button" id="btEnviar" aria-label="ENVIAR">ENVIAR</button>
+            </form>
+
+4 - Formulário contato - html botão enviar:
+<button type="submit" class="button" id="btEnviar" aria-label="ENVIAR">ENVIAR</button>
+
+5 - Botão Download
+5.1
+element:
+<a class="buttonLink" href="#formContato" id="btFormBanner" aria-label="Faça download Grátis">Faça download Grátis</a>
+css selector:
+a.buttonLink#btFormBanner
+- identificador para nomear acionador: #boxDestaques
+
+5.2
+element:
+<div class="download-link"><a class="button" href="#">Download Gratuito</a></div>
+css_selector:
+div.download-link a.button
+- identificador para nomear acionador: #boxOquee
+
+6 - Cliques de saída - Apps
+css selector:
+'section#boxOquee a'
+
+links:
+ Android:
+https://play.google.com/store/apps/details?id=br.com.pontaaponta.credpago&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1
+https://play.google.com/store/apps/details?id=com.pontapontacredpago
+ iOS:
+https://apps.apple.com/br/app/pontaponta/id1456330667
+
+7 - Cliques de saída - Quebre as Regras
+css selector:
+div.grid-credits a.quebreasregras

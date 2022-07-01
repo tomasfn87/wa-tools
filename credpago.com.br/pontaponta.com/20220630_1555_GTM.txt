@@ -1,0 +1,29 @@
+Tag --> [RCK] Click Text - Formatar
+ 
+ - Pasta: PontaPonta
+Tag --> [RCK] GA - PontaPonta - Clique - Botões - Download
+Tag --> [RCK] GA - PontaPonta - Clique - Menu
+Tag --> [RCK] GA - PontaPonta - Cliques de saída - Apps
+Tag --> [RCK] GA - PontaPonta - Cliques de saída - Quebre as Regras
+Tag --> [RCK] GA - PontaPonta - Cliques de saída - Redes sociais
+Tag --> [RCK] GA - PontaPonta - Cliques de saída - Site
+Tag --> [RCK] GA - PontaPonta - Formulário Contato
+Tag --> [RCK] GA - PontaPonta - YT Vídeo
+Tag --> [RCK] GA4 - PontaPonta - Clique - Botões - Download
+Tag --> [RCK] GA4 - PontaPonta - Clique - Menu
+Tag --> [RCK] GA4 - PontaPonta - Cliques de saída - Apps
+Tag --> [RCK] GA4 - PontaPonta - Cliques de saída - Quebre as Regras
+Tag --> [RCK] GA4 - PontaPonta - Cliques de saída - Redes sociais
+Tag --> [RCK] GA4 - PontaPonta - Cliques de saída - Site
+Tag --> [RCK] GA4 - PontaPonta - Formulário Contato
+Tag --> [RCK] GA4 - PontaPonta - YT Vídeo
+Trigger --> [RCK] PontaPonta - Clique - Botão Download #boxDestaques
+Trigger --> [RCK] PontaPonta - Clique - Botão Download #boxDownload
+Trigger --> [RCK] PontaPonta - Clique - Menu
+Trigger --> [RCK] PontaPonta - Cliques de saída - Apps
+Variable --> [RCK] PontaPonta - Cliques de saída - Apps - Rótulo
+Trigger --> [RCK] PontaPonta - Cliques de saída - Quebre as Regras
+Trigger --> [RCK] PontaPonta - Cliques de saída - Redes sociais
+Trigger --> [RCK] PontaPonta - Cliques de saída - Site
+Trigger --> [RCK] PontaPonta - Visibilidade - Confirmação formulário
+Trigger --> [RCK] PontaPonta - YT Vídeo

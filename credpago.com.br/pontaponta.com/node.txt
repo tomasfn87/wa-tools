@@ -1,0 +1,6 @@
+Gerar arquivo versão ES5 na pasta es5, removendo comentários:
+tsc --allowJs --removeComments "20220629 - pontaponta - cliques saida - apps - rotulo.js" --outDir es5
+
+Passar de ES5 para GTM Script:
+Ir até a pasta Rocky\WA;
+node convert_es6_javascript_to_gtmscript.js "..\credpago.com.br\pontaponta.com\es5\20220629 - pontaponta - cliques saida - apps - rotulo.js"

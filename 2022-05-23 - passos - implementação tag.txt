@@ -1,0 +1,5 @@
+1 - Acessar a página pelo Chrome e acessar DevTools (F12)
+2 - Ir até o console e digitar dataLayer
+3 - Para puxar eventos do dataLayer em Acionadores > Eventos personalizados
+4 - Nomo do evento {event: nome_do_evento} (do dataLayer)
+5 - O acionador é o evento da página através do qual uma página com tag enviará um hit ao GA

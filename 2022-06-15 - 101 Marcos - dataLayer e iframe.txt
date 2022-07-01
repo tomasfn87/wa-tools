@@ -1,0 +1,13 @@
+dataLayer
+-----------
+ - Em que situações é preciso usar uma variável na camada de dados
+ - Em que situações é preciso usar um JavaScript personalizado
+ - Sintaxe do snippet JavaScript:
+   - geral
+   - usos específicos
+
+iframe
+--------
+- Dificuldades ao criar a tag de um botão que dispara um iframe
+- Rastrear cliques dentro do iframe
+- Se o iframe levar a uma página hospedada em outro domínio, é preciso estabelecer rastreamento cross-domain?

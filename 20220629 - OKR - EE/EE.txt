@@ -1,0 +1,7 @@
+Busca (termo) > Resultados (Lista de produto) > Pagina produto > Etapas Checkout > Agradecimento
+
+Home (elemento: header, footer) (Lista de produto) > Pagina produto > Etapas Checkout > Agradecimento
+
+Banners|Promoção interna (ID|nome) (Lista de produto) > Pagina produto > Etapas Checkout > Agradecimento
+
+Categorias (nome categoria) > Página categoria (Lista de produto) > Pagina produto > Etapas Checkout > Agradecimento

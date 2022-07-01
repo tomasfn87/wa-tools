@@ -1,0 +1,87 @@
+{
+  "Name": "Tomas Foch Nalle",
+  "JobRoles": [
+    "Analyst"
+  ],
+  "BusinessTypes": [
+    "Ecommerce",
+    "Branding",
+    "Lead Generation",
+    "Content Publisher"
+  ],
+  "IsOptedInToEmails": false,
+  "CourseProgress": [
+    {
+      "CourseName": "Advanced Google Analytics",
+      "StartDate": 20220517,
+      "CourseCompleted": true,
+      "CertificateDate": 20220524,
+      "AssessmentsProgress": [
+        {
+          "Title": "Assessment 1",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 2",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 3",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 4",
+          "Passed": true
+        }
+      ]
+    },
+    {
+      "CourseName": "Google Tag Manager Fundamentals",
+      "StartDate": 20220524,
+      "CourseCompleted": true,
+      "CertificateDate": 20220526,
+      "AssessmentsProgress": [
+        {
+          "Title": "Assessment 1",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 2",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 3",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 4",
+          "Passed": true
+        }
+      ]
+    },
+    {
+      "CourseName": "Introduction to Data Studio",
+      "StartDate": 20220526,
+      "CourseCompleted": true,
+      "CertificateDate": 20220530,
+      "AssessmentsProgress": [
+        {
+          "Title": "Assessment 1",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 2",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 3",
+          "Passed": true
+        },
+        {
+          "Title": "Assessment 4",
+          "Passed": true
+        }
+      ]
+    }
+  ]
+}
