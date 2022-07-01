@@ -1,6 +1,6 @@
 () => {
     let click_url = '{{Click URL}}'
-    const reYouTubeEmbedUrl = /https?:\/\/www\.?youtube.com\/.*?embed\/([^?]+)\?\S*/
+    const reYouTubeEmbedUrl = /https?:\/\/www\.?youtube.com\/.*?embed\/([^?]+)(\?\S*)?/
     const reYouTubeUrl = /https?:\/\/www\.youtube.com\/watch\?v=([^&]*)&?((feature\S+))*/
     let video_id
     
