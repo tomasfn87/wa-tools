@@ -54,3 +54,8 @@ https://apps.apple.com/br/app/pontaponta/id1456330667
 7 - Cliques de saída - Quebre as Regras
 css selector:
 div.grid-credits a.quebreasregras
+
+8 - Página FAQ pontaponta.com/faq.php
+css selector:
+div.easy-autocomplete-container ul li div.eac-item
+
