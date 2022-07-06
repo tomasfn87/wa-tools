@@ -1,0 +1,7 @@
+1 - Cliques - Botões
+	1.1 - Encontre uma imobiliária
+		seletor css:
+			main section div.styles__Container-sc-18midb7-1.krPupM div.sc-hHLeRK.gvlrnL.grid-row div div button span
+	1.2 - Quero alugar sem fiador!
+		seletor css:
+			main section#como-funciona div.style__Container-sc-1awbc2i-0.doeXft div.sc-hHLeRK.gvlrnL.main-row div div button span
