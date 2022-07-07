@@ -1,9 +1,15 @@
-1 - Cliques - Fique por dentro das novidades do mercado
-	seletor css:
-			
-	
+1 - Clique - Fique por dentro das novidades do mercado
+	element:
+		seletor css:
+			div.style__ContainerWrapper-niqf6x-0.jGCmka div.style__CarouselWrapper-bzy81a-4.gkTEvi div.react-multi-carousel-list ul li div a
+	label:
+		seletor css:
+			div.style__ContainerWrapper-niqf6x-0.jGCmka div.style__CarouselWrapper-bzy81a-4.gkTEvi div.react-multi-carousel-list ul li div a div h6
 
-
+2 - Clique - Fazer cadastro
+	element:
+		seletor css:
+			section.style__BlocoCadastroWrapper-bzy81a-21.gUnKgJ div div button
 
 
 Novos parceiros:
