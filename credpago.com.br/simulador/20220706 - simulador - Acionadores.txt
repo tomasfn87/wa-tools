@@ -1,0 +1,47 @@
+1 - Clique - Fique por dentro das novidades do mercado
+	element:
+		seletor css:
+			div.style__ContainerWrapper-niqf6x-0.jGCmka div.style__CarouselWrapper-bzy81a-4.gkTEvi div.react-multi-carousel-list ul li div a
+	label:
+		seletor css (usado na variável JavaScript):
+			div.style__ContainerWrapper-niqf6x-0.jGCmka div.style__CarouselWrapper-bzy81a-4.gkTEvi div.react-multi-carousel-list ul li div a div h6
+
+--------------------------------------------------------------------------------
+
+2 - Clique - Fazer cadastro
+	Acionador UA :
+		element:
+			seletor css:
+				section.style__BlocoCadastroWrapper-bzy81a-21.gUnKgJ div div button
+	Acionador GA4 (o acionador usado no UA não funcionou):
+		DOM pronto
+			Referrer > contém > https://credpago.com.br/simulador/
+			Page URL > contém > https://credpago.com.br/cadastre-se/
+
+--------------------------------------------------------------------------------		
+
+3 - Clique - Header
+	element 1 - Logos:
+		seletor css:
+			header ul.style__LogosWrapper-qsk0em-1.fPZDmz li a
+	element 2 - NavBar:
+		seletor css:
+			header nav ul li a
+
+--------------------------------------------------------------------------------		
+
+4 - Clique - Footer
+	element:
+		seletor css:
+			footer div section div ul li a
+		label:
+			{{Click Text}}
+
+--------------------------------------------------------------------------------
+
+5 - Cliques de saída - Redes sociais
+	element:
+		seletor css:
+			footer div.style__FooterSmallGridWrapper-dljgbr-2.fNeXiu div ul li a
+		label:
+			{{Click URL}}
