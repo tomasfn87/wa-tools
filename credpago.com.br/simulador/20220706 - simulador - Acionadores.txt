@@ -45,3 +45,10 @@
 			footer div.style__FooterSmallGridWrapper-dljgbr-2.fNeXiu div ul li a
 		label:
 			{{Click URL}}
+
+--------------------------------------------------------------------------------
+
+6 - FAQ - Dúvidas Frequentes
+	element:
+		seletor css:
+			div .style__ContainerWrapper-niqf6x-0.jGCmka div dt.style__FaqTitleWrapper-bzy81a-16.huyIxT button h4
