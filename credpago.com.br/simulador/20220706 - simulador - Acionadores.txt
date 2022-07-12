@@ -52,3 +52,10 @@
 	element:
 		seletor css:
 			div .style__ContainerWrapper-niqf6x-0.jGCmka div dt.style__FaqTitleWrapper-bzy81a-16.huyIxT button h4
+
+--------------------------------------------------------------------------------
+
+7 - Clique - Botão - Simule agora mesmo
+	element:
+		seletor css:
+			main section div div.style__LeftSide-sc-157q2ua-1.lcdAI button.style__Button-sc-1oe6yvo-0.kxqJJz
