@@ -1,0 +1,13 @@
+1 - Header
+	element:
+		seletor css
+			nav > ul > li > a
+
+--------------------------------------------------------------------------------
+
+2 - Botão Garanta Seu Ingresso
+	elements:
+		- a.styles__Link-sc-ykarsk-0.hSTTpl.tooltip
+		- button.styles__Button-sc-ykarsk-1.kYneie
+
+--------------------------------------------------------------------------------
