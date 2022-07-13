@@ -1,0 +1,4 @@
+1 - Ferramentas e soluções
+	element:
+		seletor css:
+			div.sc-hHLeRK.gvlrnL.styles__MeetSolutionsTools-sc-10ylhf0-3.fHILJX div div.col-inner div.sc-hHLeRK.gvlrnL.grid-row
