@@ -6,8 +6,50 @@
 --------------------------------------------------------------------------------
 
 2 - Botão Garanta Seu Ingresso
-	elements:
-		- a.styles__Link-sc-ykarsk-0.hSTTpl.tooltip
-		- button.styles__Button-sc-ykarsk-1.kYneie
+	a:
+		element:
+			- a.styles__Link-sc-ykarsk-0.hSTTpl.tooltip
+	button:
+		element:
+			- button.styles__Button-sc-ykarsk-1.kYneie
+
+--------------------------------------------------------------------------------
+
+3 - Inscrição Step 1 - CPF
+	url:
+		https://scheneventos.com.br/Credpago/
+
+    2 - Inscrição Step 2 - CPF cadastrado
+	    url:
+		     https://scheneventos.com.br/Credpago/verificacpf.asp
+
+        2 - Inscrição Step 2 - CPF cadastrado - Alterar cadastro
+        	url (contains):
+	        	https://scheneventos.com.br/Credpago/cadastro_alteracaopf.asp?txtcpf2=
+	        referrer:
+			https://scheneventos.com.br/Credpago/verificacpf.asp
+
+        2 - Inscrição Step 2 - CPF cadastrado - Inscrições
+	    	url (contains):
+			https://scheneventos.com.br/Credpago/inscricoes.asp?cpf=
+	        referrer:
+			https://scheneventos.com.br/Credpago/verificacpf.asp
+
+4 - Inscrição Step 3 - Formulário
+	url:
+		https://scheneventos.com.br/Credpago/cadastro.asp
+
+5 - Inscrição Step 4 - Carrinho
+	url (contains):
+		https://scheneventos.com.br/Credpago/cadastropf_ok.asp?cpf=
+
+6 - Inscrição Step 5 - Checkout
+	url:
+		https://scheneventos.com.br/Credpago/pagamento.asp
+		
+7 - Inscrição Step 6 - Botão PagSeguro
+	element:
+		seletor css:
+			input[type=image]
 
 --------------------------------------------------------------------------------
