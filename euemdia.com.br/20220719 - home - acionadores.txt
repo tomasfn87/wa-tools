@@ -1,0 +1,31 @@
+1 - Menu - O que você precisa?
+	elements:
+		seletor css:
+			header nav div.sc-iDRUQT.gwwArb > div > a
+
+-------------------------------------------------------
+
+2 - 
+
+-------------------------------------------------------
+
+3 - Footer - Cliques de saída - Redes sociais
+	element:
+		seletor css:
+			footer#emDia-footer div#home-social-block > a
+
+-------------------------------------------------------
+
+4 - Footer - Clique - Sobre a emDia
+	element:
+		seletor css:
+			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1)
+
+-------------------------------------------------------
+
+5 - Footer - Clique - Minhas Dívidas
+	element:
+		seletor css:
+			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2)
+
+-------------------------------------------------------
