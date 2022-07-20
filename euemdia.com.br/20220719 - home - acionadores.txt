@@ -1,31 +1,70 @@
-1 - Menu - O que você precisa?
-	elements:
+https://euemdia.com.br/
+
+-------------------------------------------------------
+
+1 - Menu Header - Logo emDia
+	element:
+		header nav > div:nth-child(1) > div > h1
+
+-------------------------------------------------------
+
+2 - Menu Header - Botão 2a via de boleto (somente mobile)
+	element:
 		seletor css:
-			header nav div.sc-iDRUQT.gwwArb > div > a
+			header nav > div:nth-child(1) > div > h1 + div
 
 -------------------------------------------------------
 
-2 - 
+3 - Menu Header - O que você precisa?
+	desktop:
+		elements:
+			seletor css:
+				header nav > div:nth-child(1) > div:nth-child(2) > div > div > a
+	mobile - inclui botão Entrar:
+		elements:
+			seletor css:
+				header nav > div:nth-child(3) div > a
 
 -------------------------------------------------------
 
-3 - Footer - Cliques de saída - Redes sociais
+4 - Menu Header - Entrar (somente desktop)
+	element:
+		seletor css:
+			header nav > div:nth-child(3) > div
+
+-------------------------------------------------------
+
+5 - Footer - Cliques de saída - Redes sociais
 	element:
 		seletor css:
 			footer#emDia-footer div#home-social-block > a
 
 -------------------------------------------------------
 
-4 - Footer - Clique - Sobre a emDia
+6 - Footer - Clique - Sobre a emDia (desktop):
 	element:
 		seletor css:
-			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1)
+			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a
 
 -------------------------------------------------------
 
-5 - Footer - Clique - Minhas Dívidas
+7 - Footer - Clique - Minhas Dívidas (desktop):
 	element:
 		seletor css:
-			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2)
+			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2) > div a
 
 -------------------------------------------------------
+
+8 - Foooter - Clique - Sobre a emDia && Minhas Dívidas (mobile):
+	element:
+		seletor css:
+			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a
+	categorias:
+		seletor css:
+			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6			
+
+-------------------------------------------------------
+
+Para vericar se o dispositivo é mobile:
+	navigator.userAgentData
+	navigator.userAgentData.mobile
