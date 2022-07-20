@@ -76,42 +76,44 @@
     console.log(`Ação: ${acao}`)
 })() */
 
-/*
-(() => {
-    if (!dataLayer) {let dataLayer = []}
-    dataLayer.push({emDiaHome.titulos: []})
-    dataLayer.push({emDiaHome.titulosHtml: document.querySelectorAll('footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6'})
-    dataLayer.titulosHtml.forEach(t => titulos.push(t.innerText))
-    dataLayer.push({emDiaHome.sobreAEmDiaHtml: Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a')).slice(0,5)})
-    dataLayer.push({emDiaHome.minhasDividasHtml})
-    if (navigator.userAgentData.mobile) {
-        dataLayer.emDiaHome.minhasDividasHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a')).slice(5,8)
-    } else {
-        dataLayer.emDiaHome.minhasDividasHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2) > div a'))
-    }
-    dataLayer.push({sobreAEmDia: []})
-    dataLayer.emDiaHome.sobreAEmDiaHtml.forEach(i => {
-        dataLayer.emDiaHome.sobreAEmDia.push(i.innerText.trim())
-    })
-    let dataLayer.emDiaHome.minhasDividas = []
-    dataLayer.emDiaHome.minhasDividasHtml.forEach(i => {
-        dataLayer.emDiaHome.minhasDividas.push(i.innerText.trim())
-    })
-    let dataLayer.emDiaHome.acao = ''
-    dataLayer.emDiaHome.sobreAEmDia.forEach(text => {
-        if (dataLayer.emDiaHome.clickText == text) {
-            dataLayer.emDiaHome.acao += dataLayer.emDiaHome.titulos[0]
+
+/* (() => {
+    if (document.URL == 'https://euemdia.com.br/') {
+        sessionStorage.setItem('homeClickText', ' Em Oferta! ')
+        sessionStorage.homeClickText = sessionStorage.homeClickText.trim()
+        titulos = []
+        titulosHtml = document.querySelectorAll('footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6')
+        titulosHtml.forEach(t => titulos.push(t.innerText))
+        sessionStorage.setItem('homeFooterTitulos', JSON.stringify(titulos))
+        sobreAEmDiaHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a')).slice(0,5)
+        if (navigator.userAgentData.mobile) {
+            minhasDividasHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a')).slice(5,8)
+        } else {
+            minhasDividasHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2) > div a'))
         }
-    })
-    if (dataLayer.emDiaHome.acao) {
-        console.log(`Ação: ${dataLayer.emDiaHome.acao}`)
-        return
-    }
-    dataLayer.emDiaHome.minhasDividas.forEach(text => {
-        if (dataLayer.emDiaHome.clickText == text) {
-            dataLayer.emDiaHome.acao += dataLayer.emDiaHome.titulos[1]
+        sobreAEmDia = []
+        sobreAEmDiaHtml.forEach(i => {
+            sobreAEmDia.push(i.innerText.trim())
+        })
+        minhasDividas = []
+        minhasDividasHtml.forEach(i => {
+            minhasDividas.push(i.innerText.trim())
+        })
+        sessionStorage.setItem('homeFooterAcao', '')
+        sobreAEmDia.forEach(text => {
+            if (sessionStorage.homeClickText == text) {
+                sessionStorage.homeFooterAcao = JSON.parse(sessionStorage.homeFooterTitulos)[0]
+            }
+        })
+        if (sessionStorage.homeFooterAcao) {
+            console.log(`Ação: ${sessionStorage.homeFooterAcao}`)
+            return
         }
-    })
-    console.log(`Ação: ${dataLayer.emDiaHome.acao}`)
-})()
-*/
+        minhasDividas.forEach(text => {
+            if (sessionStorage.homeClickText == text) {
+                sessionStorage.homeFooterAcao = JSON.parse(sessionStorage.homeFooterTitulos)[1]
+            }
+        })
+    }
+    console.log(`Ação: ${sessionStorage.homeFooterAcao}`)
+})() */
