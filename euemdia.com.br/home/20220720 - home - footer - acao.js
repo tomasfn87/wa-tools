@@ -75,3 +75,43 @@
     })
     console.log(`Ação: ${acao}`)
 })() */
+
+/*
+(() => {
+    if (!dataLayer) {let dataLayer = []}
+    dataLayer.push({emDiaHome.titulos: []})
+    dataLayer.push({emDiaHome.titulosHtml: document.querySelectorAll('footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6'})
+    dataLayer.titulosHtml.forEach(t => titulos.push(t.innerText))
+    dataLayer.push({emDiaHome.sobreAEmDiaHtml: Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a')).slice(0,5)})
+    dataLayer.push({emDiaHome.minhasDividasHtml})
+    if (navigator.userAgentData.mobile) {
+        dataLayer.emDiaHome.minhasDividasHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a')).slice(5,8)
+    } else {
+        dataLayer.emDiaHome.minhasDividasHtml = Array.from(document.querySelectorAll('footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2) > div a'))
+    }
+    dataLayer.push({sobreAEmDia: []})
+    dataLayer.emDiaHome.sobreAEmDiaHtml.forEach(i => {
+        dataLayer.emDiaHome.sobreAEmDia.push(i.innerText.trim())
+    })
+    let dataLayer.emDiaHome.minhasDividas = []
+    dataLayer.emDiaHome.minhasDividasHtml.forEach(i => {
+        dataLayer.emDiaHome.minhasDividas.push(i.innerText.trim())
+    })
+    let dataLayer.emDiaHome.acao = ''
+    dataLayer.emDiaHome.sobreAEmDia.forEach(text => {
+        if (dataLayer.emDiaHome.clickText == text) {
+            dataLayer.emDiaHome.acao += dataLayer.emDiaHome.titulos[0]
+        }
+    })
+    if (dataLayer.emDiaHome.acao) {
+        console.log(`Ação: ${dataLayer.emDiaHome.acao}`)
+        return
+    }
+    dataLayer.emDiaHome.minhasDividas.forEach(text => {
+        if (dataLayer.emDiaHome.clickText == text) {
+            dataLayer.emDiaHome.acao += dataLayer.emDiaHome.titulos[1]
+        }
+    })
+    console.log(`Ação: ${dataLayer.emDiaHome.acao}`)
+})()
+*/
