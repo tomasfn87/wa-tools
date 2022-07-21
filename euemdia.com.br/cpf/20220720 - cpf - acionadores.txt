@@ -2,4 +2,18 @@ https://euemdia.com.br/cpf
 
 -------------------------------------------------------
 
-1 - 
+1 - Visibilidade elemento 'Você precisa informar o seu CPF' / 'CPF inválido'
+	element:
+		seletor css:
+			div#root > div > main > div > form > div > div:nth-of-type(2)
+
+-------------------------------------------------------
+
+2 - Botão Continuar
+	element:
+		seletor css:
+			button#cpf-enter
+
+-------------------------------------------------------
+
+
