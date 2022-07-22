@@ -82,8 +82,9 @@
 				
 -------------------------------------------------------
 
-10 - Conheça outras empresas do grupo (section#institucional-testimonials + section)
+10 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
 	Link (botão) Quero abrir
 		element:
 			seletor css:
-				section#institucional-testimonials + section > div > div > div > a
+				a#home-direct-to-partner
+				
