@@ -1,6 +1,5 @@
 () => {
-    let click_text = '{{Click Text}}'
-    click_text = click_text.trim().toLowerCase()
+    let click_text = '{{Click Text}}'.trim().toLowerCase()
     let titulos = []
     const titulosHtml = document.querySelectorAll('footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6')
     titulosHtml.forEach(t => titulos.push(t.innerText))
@@ -20,27 +19,16 @@
             minhasDividas.push(i.innerText.trim().toLowerCase())
         }
     })
-    let acao = ''
-    sobreAEmDia.forEach(text => {
-        if (click_text == text) {
-            acao += titulos[0]
-        }
-    })
-    if (acao) {
-        return acao
-    }
-    minhasDividas.forEach(text => {
-        if (click_text == text) {
-            acao += titulos[1]
-        }
-    })
+    let acao
+    if (sobreAEmDia.includes(click_text)) {acao = titulos[0]}
+    if (acao) {return acao}
+    if (minhasDividas.includes(click_text)) {acao = titulos[1]}
     return acao
 }
 
 /* const homeFooterAcao = (click_text) => {
-    if (/https:\/\/euemdia\.com\.br\//.test(document.URL)) {
-        sessionStorage.setItem('homeClickText', click_text)
-        sessionStorage.homeClickText = sessionStorage.homeClickText.trim().toLowerCase()
+    if (/(https?:\/\/)euemdia\.com\.br\/(quem-somos|atendimento)?$/.test(document.URL)) {
+        sessionStorage.setItem('homeClickText', click_text.trim().toLowerCase())
         let titulos = []
         const titulosHtml = document.querySelectorAll('footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6')
         titulosHtml.forEach(t => titulos.push(t.innerText))
@@ -62,20 +50,9 @@
             }
         })
         sessionStorage.setItem('homeFooterAcao', '')
-        sobreAEmDia.forEach(text => {
-            if (sessionStorage.homeClickText == text) {
-                sessionStorage.homeFooterAcao = JSON.parse(sessionStorage.homeFooterTitulos)[0]
-            }
-        })
-        if (sessionStorage.homeFooterAcao) {
-            console.log(`Ação: ${sessionStorage.homeFooterAcao}`)
-            return
-        }
-        minhasDividas.forEach(text => {
-            if (sessionStorage.homeClickText == text) {
-                sessionStorage.homeFooterAcao = JSON.parse(sessionStorage.homeFooterTitulos)[1]
-            }
-        })
+        if (sobreAEmDia.includes(sessionStorage.homeClickText)) {sessionStorage.homeFooterAcao = JSON.parse(sessionStorage.homeFooterTitulos)[0]}
+        if (sessionStorage.homeFooterAcao) {console.log(`Ação: ${sessionStorage.homeFooterAcao}`); return}
+        if (minhasDividas.includes(sessionStorage.homeClickText)) {sessionStorage.homeFooterAcao = JSON.parse(sessionStorage.homeFooterTitulos)[1]}
         console.log(`Ação: ${sessionStorage.homeFooterAcao}`)
     }
 } */
@@ -83,4 +60,4 @@
 /* (() => {
     links_footer = document.querySelectorAll('#emDia-footer > div > div > div:nth-of-type(2) a')
     links_footer.forEach(i => i.addEventListener('click', e => { homeFooterAcao(e.target.innerText) }))
-})() /*
+})() */
