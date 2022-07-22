@@ -1,0 +1,7 @@
+Para vericar se o dispositivo é mobile:
+	navigator.userAgentData
+	navigator.userAgentData.mobile
+
+Para verificar se a proporção de exibição da página é retrato ou paisagem, respectivamente:
+	window.matchMedia("(orientation: portrait)").matches
+	window.matchMedia("(orientation: landscape)").matches
