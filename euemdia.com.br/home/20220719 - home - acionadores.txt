@@ -64,10 +64,26 @@
 
 -------------------------------------------------------
 
-Para vericar se o dispositivo é mobile:
-	navigator.userAgentData
-	navigator.userAgentData.mobile
+9 - Consultar CPF (form#home-form-cpf)
+	Input "Digite seu CPF aqui"
+		element:
+			seletor css:
+				form#home-form-cpf input#top-input-search-cpf
+	
+	Button Consulte Grátis
+		element:
+			seletor css:
+				form#home-form-cpf > button
+				
+	Link Já negociou? Pegar 2ª via do boleto
+		element:
+			seletor css:
+				form#home-form-cpf + a
+				
+-------------------------------------------------------
 
-Para verificar se a proporção de exibição da página é retrato ou paisagem, respectivamente:
-	window.matchMedia("(orientation: portrait)").matches
-	window.matchMedia("(orientation: landscape)").matches
+10 - Conheça outras empresas do grupo (section#institucional-testimonials + section)
+	Link (botão) Quero abrir
+		element:
+			seletor css:
+				section#institucional-testimonials + section > div > div > div > a
