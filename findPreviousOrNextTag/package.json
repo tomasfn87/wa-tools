@@ -1,0 +1,18 @@
+{
+  "name": "findpreviousornexttag",
+  "version": "1.0.0",
+  "description": "This simple script is used to get the closest HTML tag by first checking the sibling elements and then going up the amount of levels specified. Function 'getOrderedSiblingTags' gets an object made of the HTML tag being analysed itself and 2 lists: the previous and the next element siblings. This function is then used by functions 'findFirstPreviousSiblingTag' and 'findFirstNextSiblingTag' to search for first the HTML tag name specified, before or after the analysed tag, respectively, returning it immediately when it is found. Functions 'findFirstPreviousTag' and 'findFirstNextTag' use the correlated Sibling functions to allow the search to go up the levels passed as argument to the paremeter 'levelsUp', until if finds the HTML tag specified by tag name, that is also immediately returned when found.",
+  "main": "20220723 - find Previous or Next Tag.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HTML",
+    "tag",
+    "tagName",
+    "query",
+    "parent"
+  ],
+  "author": "github.com/tomasfn87",
+  "license": "ISC"
+}
