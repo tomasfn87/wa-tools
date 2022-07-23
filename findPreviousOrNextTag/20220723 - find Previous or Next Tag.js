@@ -19,7 +19,7 @@ const findFirstPreviousTag = (tagElement, tagName, levelsUp) => {
 const findFirstPreviousSiblingTag = (tagElement, tagName) => {
     let s = getOrderedSiblingTags(tagElement)
     if (s.siblings.previous) {
-        for (tag of s.siblings.previous.reverse()) {
+        for (let tag of s.siblings.previous.reverse()) {
             if (tag.tagName.toLowerCase() == tagName.toLowerCase()) {
                 return tag
             }
@@ -45,7 +45,7 @@ const findFirstNextTag = (tagElement, tagName, levelsUp) => {
 const findFirstNextSiblingTag = (tagElement, tagName) => {
     let s = getOrderedSiblingTags(tagElement)
     if (s.siblings.next) {
-        for (tag of s.siblings.next) {
+        for (let tag of s.siblings.next) {
             if (tag.tagName.toLowerCase() == tagName.toLowerCase()) {
                 return tag
             }
