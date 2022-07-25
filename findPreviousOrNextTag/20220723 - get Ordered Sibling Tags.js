@@ -27,15 +27,15 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
             currentTag = currentTag.nextElementSibling
         }
     }
-    // Adding Ordered siblings array to main object
     if (s=='both') {
+        // Adding Ordered siblings array to main object
         orderedSiblings.toArray = (() => {
             a = orderedSiblings.siblings.previous.slice()
             a.push(orderedSiblings.tag)
             return a.concat(orderedSiblings.siblings.next.slice())
-        })()
+        })
         // Adding tagElement position in the Ordered siblings array to main object
-        orderedSiblings.tagPosition = (() => orderedSiblings.siblings.previous.length)()
+        orderedSiblings.tagPosition = (() => orderedSiblings.siblings.previous.length)
     }
     return orderedSiblings
 }
