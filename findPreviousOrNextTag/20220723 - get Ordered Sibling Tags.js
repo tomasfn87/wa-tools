@@ -7,6 +7,10 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
             next: [] 
         }
     }
+    const sCheck = ['both', 'previous', 'next']
+    if (!sCheck.includes(s)) {
+        s = 'both'
+    }
     // Previous siblings
     if ((s=='both' || s=='previous') && tagElement.previousElementSibling) {
         currentTag = tagElement
