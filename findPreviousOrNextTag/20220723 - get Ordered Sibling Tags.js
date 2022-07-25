@@ -2,10 +2,7 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
     // Main object
     let orderedSiblings = {
         tag: tagElement, 
-        siblings: {
-            previous: [],
-            next: [] 
-        }
+        siblings: {}
     }
     const sCheck = ['both', 'previous', 'next']
     if (!sCheck.includes(s)) {
@@ -13,6 +10,7 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
     }
     // Previous siblings
     if ((s=='both' || s=='previous') && tagElement.previousElementSibling) {
+        orderedSiblings.siblings.previous = []
         currentTag = tagElement
         while (currentTag.previousElementSibling) {
             orderedSiblings.siblings.previous.unshift(currentTag.previousElementSibling)
@@ -21,6 +19,7 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
     }
     // Next siblings
     if ((s=='both' || s=='next') && tagElement.previousElementSibling) {
+        orderedSiblings.siblings.next = []
         currentTag = tagElement
         while (currentTag.nextElementSibling) {
             orderedSiblings.siblings.next.push(currentTag.nextElementSibling)
