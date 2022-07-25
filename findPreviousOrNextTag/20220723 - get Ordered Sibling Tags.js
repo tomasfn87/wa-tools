@@ -1,4 +1,4 @@
-const getOrderedSiblingTags = (tagElement) => {
+const getOrderedSiblingTags = (tagElement, s='both') => {
     // Main object
     let orderedSiblings = {
         tag: tagElement, 
@@ -8,7 +8,7 @@ const getOrderedSiblingTags = (tagElement) => {
         }
     }
     // Previous siblings
-    if (tagElement.previousElementSibling) {
+    if ((s=='both' || s=='previous') && tagElement.previousElementSibling) {
         currentTag = tagElement
         while (currentTag.previousElementSibling) {
             orderedSiblings.siblings.previous.unshift(currentTag.previousElementSibling)
@@ -16,7 +16,7 @@ const getOrderedSiblingTags = (tagElement) => {
         }
     }
     // Next siblings
-    if (tagElement.nextElementSibling) {
+    if ((s=='both' || s=='next') && tagElement.previousElementSibling) {
         currentTag = tagElement
         while (currentTag.nextElementSibling) {
             orderedSiblings.siblings.next.push(currentTag.nextElementSibling)
@@ -24,14 +24,15 @@ const getOrderedSiblingTags = (tagElement) => {
         }
     }
     // Adding Ordered siblings array to main object
-    orderedSiblings.toArray = (() => {
-        a = orderedSiblings.siblings.previous.slice()
-        a.push(orderedSiblings.tag)
-        return a.concat(orderedSiblings.siblings.next.slice())
-    })()
-    // Adding tagElement position in the Ordered siblings array to main object
-    let tagPosition = orderedSiblings.siblings.previous.length
-    orderedSiblings.tagPosition = (() => tagPosition)()
+    if (s=='both') {
+        orderedSiblings.toArray = (() => {
+            a = orderedSiblings.siblings.previous.slice()
+            a.push(orderedSiblings.tag)
+            return a.concat(orderedSiblings.siblings.next.slice())
+        })()
+        // Adding tagElement position in the Ordered siblings array to main object
+        orderedSiblings.tagPosition = (() => orderedSiblings.siblings.previous.length)()
+    }
     return orderedSiblings
 }
 
