@@ -20,16 +20,16 @@ findFirstPreviousTag(test4, 'h6', 0)
 // Click Text event listener
 setTimeout(
     (() => {
-        let links_footer = document.querySelectorAll('#emDia-footer > div > div > div:nth-of-type(2) a')
+        const links_footer = document.querySelectorAll('#emDia-footer > div > div > div:nth-of-type(2) a')
         const tagName = 'H6'
         const levelsUp = 2
-        let nivel = 'nível'
+        let n = 'nível'
             if (levelsUp > 1) {
-                nivel = nivel.slice(0,4)+'is'
+                n = n.slice(0,4)+'is'
             }
         links_footer.forEach(i => i.addEventListener('click', e => {
-            console.log(`Click Text: ${e.target.innerText},\nprimeira <${tagName.toLowerCase()}>, ${levelsUp > 0 ? 'máx. '
-            +levelsUp.toString()+' '+nivel+' acima:' : 'somente tags irmãs:'} ${findFirstPreviousTag(e.target, tagName, levelsUp).innerText}`)
+            console.log(`Click Text: ${e.target.innerText},\nPrimeira <${tagName.toLowerCase()}>, ${levelsUp > 0 ? 'no máximo '
+            +levelsUp.toString()+' '+n+' acima:' : 'somente tags irmãs:'} ${findFirstPreviousTag(e.target, tagName, levelsUp).innerText}`)
         }))
     })
 , 7000)
