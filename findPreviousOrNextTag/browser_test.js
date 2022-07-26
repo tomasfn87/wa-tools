@@ -24,9 +24,9 @@ setTimeout(
         const tagName = 'H6'
         const levelsUp = 2
         let n = 'nível'
-            if (levelsUp > 1) {
-                n = n.slice(0,4)+'is'
-            }
+        if (levelsUp > 1) {
+            n = n.slice(0,4)+'is'
+        }
         links_footer.forEach(i => i.addEventListener('click', e => {
             console.log(`Click Text: ${e.target.innerText},\nPrimeira <${tagName.toLowerCase()}>, ${levelsUp > 0 ? 'no máximo '
             +levelsUp.toString()+' '+n+' acima:' : 'somente tags irmãs:'} ${findFirstPreviousTag(e.target, tagName, levelsUp).innerText}`)
