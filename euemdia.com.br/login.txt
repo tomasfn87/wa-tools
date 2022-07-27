@@ -6,3 +6,20 @@ EMAIL
 	tomas.nalle@rocky.ag
 SENHA
 	waemdia00
+
+SITES PARA RECEBER SMS
+  - (Não funciona) https://receive-smss.com/ 
+	LOGIN
+		testsms2022
+	SENHA
+		smsemdia00
+
+  - (Não funciona) https://pt.mytempsms.com/receive-sms-online/
+
+  - (Não funciona) https://quackr.io/
+
+  - (Pago) https://sms-service-online.com/br/home - $0.40
+
+  - (Não funciona) https://online-sms.org/pt
+
+  - (Não funciona) https://www.spoofbox.com/pt/numero-virtual/brasil
