@@ -4,7 +4,7 @@ https://euemdia.com.br/
 
 1 - Menu Header - Logo emDia
 	element:
-		header nav > div:nth-child(1) > div > h1
+		header nav > div:nth-child(1) > div > h1 > svg
 
 -------------------------------------------------------
 
@@ -19,11 +19,11 @@ https://euemdia.com.br/
 	desktop:
 		elements:
 			seletor css:
-				header nav > div:nth-child(1) > div:nth-child(2) > div > div > a
+				#root > div > div > div > header > div > div > nav > div > div > div > div > a > div:nth-of-type(1)
 	mobile - inclui botão Entrar:
 		elements:
 			seletor css:
-				header nav > div:nth-child(3) div > a
+				header nav > div:nth-child(3) div > a > div:nth-of-type(1)
 
 -------------------------------------------------------
 
@@ -31,31 +31,41 @@ https://euemdia.com.br/
 	element:
 		seletor css:
 			header nav > div:nth-child(3) > div
+	items:
+		seletor css:
+			
 
 -------------------------------------------------------
 
-5 - Footer - Cliques de saída - Redes sociais
+5 - Menu Header (após login) - Minhas Dívidas
+	element:
+		seletor css:
+			#root > div > div > div > header > div > div > nav > div:nth-of-type(3) > div
+
+-------------------------------------------------------
+
+6 - Footer - Cliques de saída - Redes sociais
 	element:
 		seletor css:
 			footer#emDia-footer div#home-social-block > a
 
 -------------------------------------------------------
 
-6 - Footer - Clique - Sobre a emDia (desktop):
+7 - Footer - Clique - Sobre a emDia (desktop):
 	element:
 		seletor css:
 			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a
 
 -------------------------------------------------------
 
-7 - Footer - Clique - Minhas Dívidas (desktop):
+8 - Footer - Clique - Minhas Dívidas (desktop):
 	element:
 		seletor css:
 			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2) > div a
 
 -------------------------------------------------------
 
-8 - Foooter - Clique - Sobre a emDia && Minhas Dívidas (mobile):
+9 - Foooter - Clique - Sobre a emDia && Minhas Dívidas (mobile):
 	element:
 		seletor css:
 			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a
@@ -68,7 +78,7 @@ https://euemdia.com.br/
 
 -------------------------------------------------------
 
-9 - Consultar CPF (form#home-form-cpf)
+10 - Consultar CPF (form#home-form-cpf)
 	Input "Digite seu CPF aqui"
 		element:
 			seletor css:
@@ -86,7 +96,7 @@ https://euemdia.com.br/
 				
 -------------------------------------------------------
 
-10 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
+11 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
 	Link (botão) Quero abrir
 		element:
 			seletor css:
