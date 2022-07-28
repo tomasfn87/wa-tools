@@ -33,7 +33,6 @@ https://euemdia.com.br/
 			header nav > div:nth-child(3) > div
 	items:
 		seletor css:
-			
 
 -------------------------------------------------------
 
@@ -51,30 +50,10 @@ https://euemdia.com.br/
 
 -------------------------------------------------------
 
-7 - Footer - Clique - Sobre a emDia (desktop):
-	element:
+7 - Footer - Clique - Links (Sobre a emDia / Minhas Dívidas)
+	elements:
 		seletor css:
-			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a
-
--------------------------------------------------------
-
-8 - Footer - Clique - Minhas Dívidas (desktop):
-	element:
-		seletor css:
-			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(2) > div a
-
--------------------------------------------------------
-
-9 - Foooter - Clique - Sobre a emDia && Minhas Dívidas (mobile):
-	element:
-		seletor css:
-			footer div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div a
-	categorias:
-		seletor css:
-			footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) h6
-			footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) > div:nth-child(1) > div h6
-			footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) h6:nth-of-type(1)
-			footer > div.MuiContainer-root.MuiContainer-maxWidthLg > div > div:nth-child(2) h6:nth-of-type(2)
+			#emDia-footer > div > div > div:nth-of-type(2) div a
 
 -------------------------------------------------------
 
@@ -100,5 +79,4 @@ https://euemdia.com.br/
 	Link (botão) Quero abrir
 		element:
 			seletor css:
-				a#home-direct-to-partner
-				
+				a#home-direct-to-partner				
