@@ -1,17 +1,13 @@
 () => {
-    const click_element = '{{Click Element}}'
-    const cssLogoEmDia = 'header nav > div:nth-child(1) > div > h1 > svg'
-    const cssBotaoEntrar = 'header > div > div > nav > div:nth-of-type(2) span'
-    const cssBotao2aViaDeBoleto = 'header nav > div:nth-child(1) > div > h1 + div'
-    const cssMenuHamburguer = 'header nav > div:nth-child(3) div > a > div:nth-of-type(1)'
-    const cssMenuOQueVocePrecisa = 'header > div > div > nav > div > div > div > div > a > div:nth-of-type(1)'
-    if (click_element.matches(cssLogoEmDia)) {
+    const ce = '{{Click Element}}'
+    if (ce.matches('{{[RCK] Home - Header - Logo emDia (CSS)}}')) {
         return 'Logo' 
-    } else if (click_element.matches(cssBotaoEntrar) || click_element.matches(cssBotao2aViaDeBoleto)) {
+    } else if (ce.matches('{{[RCK] Home - Header - Botão Entrar (desktop) (CSS)}}') 
+        || ce.matches('{{[RCK] Home - Header - Botão 2a via de boleto (mobile) (CSS)}}')) {
         return 'Botão'
-    } else if (click_element.matches(cssMenuHamburguer)) {
+    } else if (ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) (CSS)}}')) {
         return 'Menu hambúrguer'
-    } else if (click_element.matches(cssMenuOQueVocePrecisa)) {
+    } else if (ce.matches('{{[RCK] Home - Header - Menu O que você precisa? (desktop) (CSS)}}')) {
         return 'Menu O que você precisa?'
     }
 }
