@@ -19,11 +19,7 @@ https://euemdia.com.br/
 	desktop:
 		elements:
 			seletor css:
-				header > div > div > nav > div > div > div > div > a > div:nth-of-type(1)
-	mobile - inclui botão Entrar:
-		elements:
-			seletor css:
-				header nav > div:nth-child(3) div > a > div:nth-of-type(1)
+				header > div > div > nav > div:nth-of-type(1) > div > div > div > a > div:nth-of-type(1)
 
 -------------------------------------------------------
 
@@ -31,33 +27,55 @@ https://euemdia.com.br/
 	element:
 		seletor css:
 			header nav > div:nth-child(3) > div
-	items:
-		seletor css:
 
 -------------------------------------------------------
 
-5 - Menu Header (após login) - Minhas Dívidas
-	element:
+5 - Menu Header - Menú hambúrguer (mobile)
+	elements:
 		seletor css:
-			header > div > div > nav > div:nth-of-type(3) > div
+			header nav > div:nth-child(3) > div > a > div:nth-of-type(1)
 
 -------------------------------------------------------
 
-6 - Footer - Cliques de saída - Redes sociais
+6 - Menu Header (login) - Minhas Dívidas
+	elements:
+		seletor css:
+			header > div > div > nav > div:nth-of-type(2) > div > div > div > a > div:nth-of-type(1)
+
+-------------------------------------------------------
+
+7 - Menu Header (login) - Menu usuário
+	Textos (Alterar sua conta / Sair)
+		elements:
+			seletor css:
+				header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div div p
+	Ícone Sair
+		elements:
+			header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div div p:nth-of-type(2)+i
+			
+
+7 - Footer - Cliques de saída - Redes sociais
 	element:
 		seletor css:
 			footer#emDia-footer div#home-social-block > a
 
 -------------------------------------------------------
 
-7 - Footer - Clique - Links (Sobre a emDia / Minhas Dívidas)
+8 - Footer - Clique - Links (Sobre a emDia / Minhas Dívidas)
 	elements:
 		seletor css:
 			#emDia-footer > div > div > div:nth-of-type(2) div a
 
 -------------------------------------------------------
 
-10 - Consultar CPF (form#home-form-cpf)
+9 - Footer - Clique - (Políticas e Segurança / Procon)
+	elements:
+		seletor css:
+			#emDia-footer > div > div > div:nth-of-type(3) > div:nth-of-type(2) > div > a
+
+-------------------------------------------------------
+
+10 - Consultar CPF (form#home-form-cpf) (#institucional-main)
 	Input "Digite seu CPF aqui"
 		element:
 			seletor css:
@@ -67,6 +85,11 @@ https://euemdia.com.br/
 		element:
 			seletor css:
 				form#home-form-cpf > button
+				
+	Mensagem 'CPF inválido'
+		element:
+			seletor css:
+				form#home-form-cpf > div
 				
 	Link Já negociou? Pegar 2ª via do boleto
 		element:
