@@ -9,5 +9,10 @@
         return 'Menu hambúrguer'
     } else if (ce.matches('{{[RCK] Home - Header - Menu O que você precisa? (desktop) (CSS)}}')) {
         return 'Menu O que você precisa?'
+    } else if (ce.matches('{{[RCK] Home (login) - Header - Menu Minhas Dívidas (desktop) (CSS)}}')) {
+        return 'Menu Minhas Dívidas'
+    } else if (ce.matches('{{[RCK] Home (login) - Header - Menu usuário (CSS)}}')
+        || ce.matches('{{[RCK] Home (login) - Header - Menu usuário - Ícone Sair (CSS)}}')) {
+        return 'Menu usuário'
     }
 }
