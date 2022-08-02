@@ -1,4 +1,4 @@
 () => {
     const ce = '{{Click Element}}'
-    return ce.parentNode.innerText.split('\n')[0].trim()
+    return ce.parentElement.parentElement.innerText.split('\n')[0].trim()
 }
