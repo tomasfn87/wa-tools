@@ -35,11 +35,12 @@ https://euemdia.com.br/
 		elements:
 			seletor css:
 				header nav > div:nth-child(3) > div > a > div:nth-of-type(1)
+
 	Subitens:
 		elements
 			seletor css:
 				header nav > div:nth-child(3) > div > a > div:nth-of-type(2) > div
-				
+
 	Alterar sua conta / Sair
 		element:
 			seletor css:
@@ -49,7 +50,6 @@ https://euemdia.com.br/
 		element:
 			seletor css:
 				header > div > div > nav > div > div > div:nth-of-type(1) > div p+i
-	
 
 -------------------------------------------------------
 
@@ -68,7 +68,6 @@ https://euemdia.com.br/
 	Ícone Sair
 		elements:
 			header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div div p:nth-of-type(2)+i
-			
 
 7 - Footer - Cliques de saída - Redes sociais
 	element:
@@ -96,22 +95,22 @@ https://euemdia.com.br/
 		element:
 			seletor css:
 				form#home-form-cpf input#top-input-search-cpf
-	
+
 	Button Consulte Grátis
 		element:
 			seletor css:
 				form#home-form-cpf > button
-				
+
 	Mensagem 'CPF inválido'
 		element:
 			seletor css:
 				form#home-form-cpf > div
-				
+
 	Link Já negociou? Pegar 2ª via do boleto
 		element:
 			seletor css:
 				form#home-form-cpf + a
-				
+
 -------------------------------------------------------
 
 11 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
