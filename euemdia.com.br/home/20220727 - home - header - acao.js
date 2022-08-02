@@ -6,8 +6,8 @@
         || ce.matches('{{[RCK] Home - Header - Botão 2a via de boleto (mobile) (CSS)}}')) {
         return 'Botão'
     } else if (ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) (CSS)}}')
-        || ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) - Alterar sua conta / Sair (CSS)}}')
-        || ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) - Ícone Sair (CSS)}}')) {
+        || ce.matches('{{[RCK] Home (login) - Header - Menu hambúrguer (mobile) - Alterar sua conta / Sair (CSS)}}')
+        || ce.matches('{{[RCK] Home (login) - Header - Menu hambúrguer (mobile) - Ícone Sair (CSS)}}')) {
         return 'Menu hambúrguer'
     } else if (ce.matches('{{[RCK] Home - Header - Menu O que você precisa? (desktop) (CSS)}}')) {
         return 'Menu O que você precisa?'
