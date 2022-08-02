@@ -9,6 +9,8 @@
         || ce.matches('{{[RCK] Home (login) - Header - Menu hambúrguer (mobile) - Alterar sua conta / Sair (CSS)}}')
         || ce.matches('{{[RCK] Home (login) - Header - Menu hambúrguer (mobile) - Ícone Sair (CSS)}}')) {
         return 'Menu hambúrguer'
+    } else if (ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) - Subitens (CSS)}}')) {
+        return 'Menu hambúrguer - ' + '{{[RCK] Home - Header - Menu hambúrguer (mobile) - Subitens - Ação}}'
     } else if (ce.matches('{{[RCK] Home - Header - Menu O que você precisa? (desktop) (CSS)}}')) {
         return 'Menu O que você precisa?'
     } else if (ce.matches('{{[RCK] Home (login) - Header - Menu Minhas Dívidas (desktop) (CSS)}}')) {
@@ -16,7 +18,5 @@
     } else if (ce.matches('{{[RCK] Home (login) - Header - Menu usuário (desktop) (CSS)}}')
         || ce.matches('{{[RCK] Home (login) - Header - Menu usuário (desktop) - Ícone Sair (CSS)}}')) {
         return 'Menu usuário'
-    } else if (ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) - Subitens (CSS)}}')) {
-        return 'Menu hambúrguer - ' + '{{[RCK] Home - Header - Menu hambúrguer (mobile) - Subitens - Ação}}'
     }
 }
