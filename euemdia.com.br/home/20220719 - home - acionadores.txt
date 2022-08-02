@@ -44,12 +44,12 @@ https://euemdia.com.br/
 	Alterar sua conta / Sair
 		element:
 			seletor css:
-				header > div > div > nav > div > div > div:nth-of-type(1) > div p
+				header > div > div > nav > div:nth-of-type(3) > div:nth-of-type(1) > div p
 	
 	Ícone Sair
 		element:
 			seletor css:
-				header > div > div > nav > div > div > div:nth-of-type(1) > div p+i
+				header > div > div > nav > div:nth-of-type(3) > div:nth-of-type(1) > div p+i
 
 -------------------------------------------------------
 
@@ -64,33 +64,35 @@ https://euemdia.com.br/
 	Textos (Alterar sua conta / Sair)
 		elements:
 			seletor css:
-				header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div div p
+				header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div p
 	Ícone Sair
 		elements:
-			header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div div p:nth-of-type(2)+i
+			header > div > div > nav > div:nth-of-type(2) > div:nth-of-type(2) > div p+i
 
-7 - Footer - Cliques de saída - Redes sociais
+-------------------------------------------------------
+
+8 - Footer - Cliques de saída - Redes sociais
 	element:
 		seletor css:
 			footer#emDia-footer div#home-social-block > a
 
 -------------------------------------------------------
 
-8 - Footer - Clique - Links (Sobre a emDia / Minhas Dívidas)
+9 - Footer - Clique - Links (Sobre a emDia / Minhas Dívidas)
 	elements:
 		seletor css:
 			#emDia-footer > div > div > div:nth-of-type(2) div a
 
 -------------------------------------------------------
 
-9 - Footer - Clique - (Políticas e Segurança / Procon)
+10 - Footer - Clique - (Políticas e Segurança / Procon)
 	elements:
 		seletor css:
 			#emDia-footer > div > div > div:nth-of-type(3) > div:nth-of-type(2) > div > a
 
 -------------------------------------------------------
 
-10 - Consultar CPF (form#home-form-cpf) (#institucional-main)
+11 - Consultar CPF (form#home-form-cpf) (#institucional-main)
 	Input "Digite seu CPF aqui"
 		element:
 			seletor css:
@@ -113,7 +115,7 @@ https://euemdia.com.br/
 
 -------------------------------------------------------
 
-11 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
+12 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
 	Link (botão) Quero abrir
 		element:
 			seletor css:
