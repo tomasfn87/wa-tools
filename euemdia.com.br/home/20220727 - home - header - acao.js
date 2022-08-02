@@ -14,7 +14,7 @@
     } else if (ce.matches('{{[RCK] Home (login) - Header - Menu Minhas Dívidas (desktop) (CSS)}}')) {
         return 'Menu Minhas Dívidas'
     } else if (ce.matches('{{[RCK] Home (login) - Header - Menu usuário (desktop) (CSS)}}')
-        || ce.matches('{{[RCK] Home (login) - Header - Menu usuário - Ícone Sair (desktop) (CSS)}}')) {
+        || ce.matches('{{[RCK] Home (login) - Header - Menu usuário (desktop) - Ícone Sair (CSS)}}')) {
         return 'Menu usuário'
     } else if (ce.matches('{{[RCK] Home - Header - Menu hambúrguer (mobile) - Subitens (CSS)}}')) {
         return 'Menu hambúrguer - ' + '{{[RCK] Home - Header - Menu hambúrguer (mobile) - Subitens - Ação}}'
