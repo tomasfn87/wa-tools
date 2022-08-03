@@ -93,34 +93,3 @@ https://euemdia.com.br/alterar-dados/cadastro
 	elements:
 		seletor css:
 			#emDia-footer > div > div > div:nth-of-type(3) > div:nth-of-type(2) > div > a
-
--------------------------------------------------------
-
-11 - Consultar CPF (form#home-form-cpf) (#institucional-main)
-	Input "Digite seu CPF aqui"
-		element:
-			seletor css:
-				form#home-form-cpf input#top-input-search-cpf
-
-	Button Consulte Grátis
-		element:
-			seletor css:
-				form#home-form-cpf > button
-
-	Mensagem 'CPF inválido'
-		element:
-			seletor css:
-				form#home-form-cpf > div
-
-	Link Já negociou? Pegar 2ª via do boleto
-		element:
-			seletor css:
-				form#home-form-cpf + a
-
--------------------------------------------------------
-
-12 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
-	Link (botão) Quero abrir
-		element:
-			seletor css:
-				a#home-direct-to-partner				
