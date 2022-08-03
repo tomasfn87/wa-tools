@@ -1,0 +1,32 @@
+https://euemdia.com.br/
+
+-------------------------------------------------------
+
+1 - Institucional ('section#institucional-main')
+	Input "Digite seu CPF aqui"
+		element:
+			seletor css:
+				#home-form-cpf input#top-input-search-cpf
+
+	Button Consulte Grátis
+		element:
+			seletor css:
+				#home-form-cpf > button
+
+	Mensagem 'CPF inválido'
+		element:
+			seletor css:
+				#home-form-cpf > div
+
+	Link Já negociou? Pegar 2ª via do boleto
+		element:
+			seletor css:
+				#home-form-cpf + a
+
+-------------------------------------------------------
+
+2 - Conheça outras empresas do grupo (section#institucional-testimonials + section / div#page-home > section:nth-of-type(6))
+	Link (botão) Quero abrir
+		element:
+			seletor css:
+				a#home-direct-to-partner				
