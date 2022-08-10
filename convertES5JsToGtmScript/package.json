@@ -1,0 +1,21 @@
+{
+  "name": "wa-tools",
+  "version": "1.0.0",
+  "description": "",
+  "main": "remove_quote_near_double_curly_brackets.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  },
+  "dependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "colors": "^1.4.0"
+  }
+}
