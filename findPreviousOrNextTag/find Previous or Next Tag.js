@@ -1,4 +1,4 @@
-import getOrderedSiblingTags from "./20220723 - get Ordered Sibling Tags"
+import getOrderedSiblingTags from "./get Ordered Sibling Tags"
 
 
 const findFirstPreviousTag = (tagElement, tagName, levelsUp) => {
