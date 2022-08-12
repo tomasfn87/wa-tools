@@ -28,6 +28,16 @@ const getCookiesAsObjArr = (URL, cookie_str, process = 'none') => {
 
 const printCookieAndURL = (URL, cookie, index='-', decode='none') => {
   let data = getCookiesAsObjArr(URL = URL, cookie = cookie, process = decode)
+  console.log(`${index}) URL: ${data.URL}`)
+  console.log(`${' '.repeat(index.length+2)}Cookies (${data.cookies.length}): {`)
+  data.cookies.forEach((element, index) => {
+    console.log(`     ${index+1}) ${element.key}: ${element.value.replaceAll(/&/g, '\n' + ' '.repeat(index.toString.length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
+  })
+  console.log(`  {`)  
+}
+
+const printColoredCookieAndURL = (URL, cookie, index='-', decode='none') => {
+  let data = getCookiesAsObjArr(URL = URL, cookie = cookie, process = decode)
   console.log(`${String(index).yellow}) URL: ${String(data.URL).brightGreen}`)
   console.log(`${' '.repeat(String(index).length+2)}Cookies (${String(data.cookies.length).brightRed}): {`)
   data.cookies.forEach((element, index) => {
@@ -59,7 +69,7 @@ const cookiesAndURLs = [
   }
 ]
 
-let text = 'Codificado:'
+let text = 'Codificado, sem coloração:'
 console.log(text)
 console.log('-'.repeat(text.trim().length) + '\n')
 cookiesAndURLs.forEach((element, index) => {
@@ -67,11 +77,11 @@ cookiesAndURLs.forEach((element, index) => {
   index != cookiesAndURLs.length-1 && console.log()
 })
 console.log('\n')
-text = 'Decodificado:'
+text = 'Decodificado e colorido:'
 console.log(text)
 console.log('-'.repeat(text.trim().length) + '\n')
 cookiesAndURLs.forEach((element, index) => {
-  printCookieAndURL(element.URL, element.cookie, index+1, 'decode')
+  printColoredCookieAndURL(element.URL, element.cookie, index+1, 'decode')
   index != cookiesAndURLs.length-1 && console.log()
 })
 
