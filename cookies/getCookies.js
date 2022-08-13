@@ -33,7 +33,7 @@ const printCookieAndURL = (URL, cookie, index='-', decode='none') => {
   data.cookies.forEach((element, index) => {
     console.log(`     ${index+1}) ${element.key}: ${element.value.replaceAll(/&/g, '\n' + ' '.repeat(index.toString.length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
-  console.log(`  {`)  
+  console.log(`  }`)  
 }
 
 const printColoredCookieAndURL = (URL, cookie, index='-', decode='none') => {
@@ -43,7 +43,7 @@ const printColoredCookieAndURL = (URL, cookie, index='-', decode='none') => {
   data.cookies.forEach((element, index) => {
     console.log(`     ${String(index + 1).brightGreen}) ${element.key.green}: ${String(element.value.brightBlue).replaceAll(/&/g, '\n' + ' '.repeat(index.toString.length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
-  console.log(`  {`)  
+  console.log(`  }`)  
 }
 
 const cookiesAndURLs = [
