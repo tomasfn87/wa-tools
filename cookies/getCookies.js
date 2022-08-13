@@ -1,4 +1,4 @@
-import colors from 'colors'
+import colors from 'colors/safe.js'
 
 /* 1) Load function getCookiesAsObjArr and then run the command above on the browser console:
 getCookiesAsObjArr(document.URL, document.cookie. 'decode')
@@ -42,10 +42,10 @@ const printCookieAndURL = (URL, cookie, index='-', decode='none') => {
 
 const printColoredCookieAndURL = (URL, cookie, index='-', decode='none') => {
   let data = getCookiesAsObjArr(URL = URL, cookie = cookie, process = decode)
-  console.log(`${String(index).yellow}) URL: ${String(data.URL).brightGreen}`)
-  console.log(`${' '.repeat(String(index).length+2)}Cookies (${String(data.cookies.length).brightGreen}): {`)
+  console.log(`${colors.yellow(String(index))}) URL: ${colors.brightGreen(String(data.URL))}`)
+  console.log(`${' '.repeat(String(index).length+2)}Cookies (${colors.yellow(String(data.cookies.length))}): {`)
   data.cookies.forEach((element, index) => {
-    console.log(`     ${String(index + 1).yellow}) ${element.key.green}: ${String(element.value.cyan).replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
+    console.log(`     ${colors.brightGreen(String(index + 1))}) ${colors.green(element.key)}: ${colors.cyan(String(element.value).replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& '))}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
   console.log(`  }`)  
 }
