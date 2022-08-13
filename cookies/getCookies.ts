@@ -1,19 +1,19 @@
-const colors = require('colors/safe.js')
+const colors = require('colors/safe')
 
 /* 1) Load function getCookiesAsObjArr and then run the command above on the browser console:
 getCookiesAsObjArr(document.URL, document.cookie. 'decode')
 */
-export interface CookieObjArray {
+interface CookieObjArray {
   URL: string,
   cookies: CookieObj[]
 }
 
-export interface CookieObj {
+interface CookieObj {
   key: string,
   value: string
 }
 
-export type Process = 'none' | 'decode'
+type Process = 'none' | 'decode'
 
 const getCookiesAsObjArr:Function = (
   URL:string,
@@ -35,7 +35,7 @@ const getCookiesAsObjArr:Function = (
       value: element.replace(regex_key_value, "$2")
     })
   })
-  String(process) == 'decode' && cookiesAsObjArr.cookies.forEach(element => {
+  process == 'decode' && cookiesAsObjArr.cookies.forEach(element => {
     element.value = decodeURIComponent(element.value)
   })
   return cookiesAsObjArr
