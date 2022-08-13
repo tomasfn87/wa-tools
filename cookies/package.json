@@ -1,7 +1,7 @@
 {
   "name": "cookies",
   "version": "1.0.0",
-  "description": "",
+  "description": "Extract cookies from the document.cookie variable in the DOM",
   "type": "module",
   "main": "getCookies.js",
   "scripts": {
@@ -11,5 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/colors": "^1.2.1",
+    "@types/node": "^18.7.2",
+    "ts-node": "^10.9.1",
+    "tsc": "^2.0.4",
+    "typescript": "^4.7.4"
   }
 }
