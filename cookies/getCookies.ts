@@ -3,6 +3,7 @@ const colors = require('colors/safe')
 /* 1) Load function getCookiesAsObjArr and then run the command above on the browser console:
 getCookiesAsObjArr(document.URL, document.cookie. 'decode')
 */
+
 interface CookieObjArray {
   URL: string,
   cookies: CookieObj[]
