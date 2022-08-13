@@ -1,7 +1,7 @@
 import colors from 'colors'
 
-/* Load function getCookiesAsObjArr and then run the command above on the browser console:
-getCookiesAsObjArr(document.URL, document.cookie)
+/* 1) Load function getCookiesAsObjArr and then run the command above on the browser console:
+getCookiesAsObjArr(document.URL, document.cookie. 'decode')
 */
 
 const getCookiesAsObjArr = (URL, cookie_str, process = 'none') => {
@@ -25,6 +25,10 @@ const getCookiesAsObjArr = (URL, cookie_str, process = 'none') => {
   })
   return cookiesAsObjArr
 }
+
+/* 2) Load function printCookieAndURL and then run the command above on the browser console:
+printCookieAndURL(document.URL, document.cookie, 1, 'decode')
+*/
 
 const printCookieAndURL = (URL, cookie, index='-', decode='none') => {
   let data = getCookiesAsObjArr(URL = URL, cookie = cookie, process = decode)
