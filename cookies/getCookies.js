@@ -45,7 +45,7 @@ const printColoredCookieAndURL = (URL, cookie, index='-', decode='none') => {
   console.log(`${String(index).yellow}) URL: ${String(data.URL).brightGreen}`)
   console.log(`${' '.repeat(String(index).length+2)}Cookies (${String(data.cookies.length).brightGreen}): {`)
   data.cookies.forEach((element, index) => {
-    console.log(`     ${String(index + 1).brightGreen}) ${element.key.green}: ${String(element.value.brightBlue).replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
+    console.log(`     ${String(index + 1).yellow}) ${element.key.green}: ${String(element.value.cyan).replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
   console.log(`  }`)  
 }
