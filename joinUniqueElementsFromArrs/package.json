@@ -1,0 +1,33 @@
+{
+  "name": "join-unique-elements-from-arrays",
+  "version": "0.0.1",
+  "description": "Merge an array of arrays avoiding repeated values - works only with primitives - mainly lists of numbers and strings - objects and arrays cannot be compared using equality operator (==/===) and is not the use intention of this function.",
+  "main": "joinUniqueElementsFromArrs.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomasfn98/wa-tools.git"
+  },
+  "keywords": [
+    "arrays",
+    "lists",
+    "join",
+    "avoid-repetition-of-primitive-elements"
+  ],
+  "author": "tomas.nalle@alumni.usp.br",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomasfn98/wa-tools/issues"
+  },
+  "homepage": "https://github.com/tomasfn98/wa-tools#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0"
+  }
+}
