@@ -58,10 +58,9 @@ or<br>
 
 > The code above is not even valid JavaScript; it's GtmScript, and running a .js file with this code would throw an error:<br>
 
-<code>function () { return true; }<br>
-^^^^^^^^
-<br><br>
-SyntaxError: Function statements require a function name</code><br><br>
+<code>function () { return true; }</code><br>
+<code>^^^^^^^^</code><br><br>
+<code>SyntaxError: Function statements require a function name</code><br><br>
 
 > And having to delete things is fine for a single file, but when you need to convert several or many files, it's very useful to do this is an automatic way to avoid making mistakes, and this is exactly what this is script does.<br><br>
 ---

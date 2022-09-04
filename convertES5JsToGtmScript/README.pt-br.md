@@ -1,4 +1,4 @@
-<h1>Baixar o projeto em si e suas dependências<h1>
+<h1>Baixar o projeto em si e suas dependências</h1>
 
 <h3>1 - Entre nesse website:</h3>
 <a href='https://download-directory.github.io'>https://download-directory.github.io</a><br><br>
@@ -58,10 +58,9 @@ ou<br>
 
 > O código acima não é sequer um código JavaScript válido; é GtmScript, e rodar um arquivo .js com esse código geraria um erro:<br>
 
-<code>function () { return true; }<br>
-^^^^^^^^
-<br><br>
-SyntaxError: Function statements require a function name</code><br><br>
+<code>function () { return true; }</code><br>
+<code>^^^^^^^^</code><br><br>
+<code>SyntaxError: Function statements require a function name</code><br><br>
 
 > E tudo bem ter que deletar algumas coisas em um único arquivo, mas quando você precisa converter vários ou muitos arquivos, é muito útil fazer essa operação de forma automatizada, e é exatamente isso que esse script faz.<br><br>
 ---
