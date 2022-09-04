@@ -69,7 +69,7 @@ ou<br>
 <strong>Exemplo</strong> - referência a uma variável do Google Tag Manager:<br>
 <code>{{minhaVariavel}}</code>
 
-> O código acima iria gerar um erro ao rodar o tsc. Descobri que uma maneira de contornar esse problema é envolver essas variáveis em aspas simples ou duplas, como nos exemplos abaixo. Esse script se assegurará que as aspas desapareceram - eles só irão servir para permitir que o transpilador trabalhe corretamente.
+> O código acima iria gerar um erro ao rodar o tsc. Descobri que uma maneira de contornar esse problema é envolver essas variáveis em aspas simples ou duplas, como nos exemplos abaixo. Esse script se assegurará que as aspas desapareçam - elas apenas irão servir para permitir que o transpilador trabalhe corretamente.
 
 <strong>Exemplo</strong> - como fazer referência a uma varíavel Google Tag Manager com uma sintaxe válida em JavaScript:<br>
 <code>'{{minhaVariavel}}'</code><br>
