@@ -17,12 +17,12 @@ or<br>
 ---
 <br><h1>Why was this script created?</h1>
 
-> This script is meant to be used when a JavaScript code from a version above ES5 needs to be used into a Google Tag Manager custom JavaScript variable, and can also be partially useful when writing custom HTML tags. Google Tag Manager uses a slightly different version of JavaScript, know as GtmScript - it has to be ES5 and has its own syntax:<br><br>
+> This script is meant to be used when a JavaScript code from a version above ES5 needs to be used into a <a href="https://tagmanager.google.com/">Google Tag Manager</a> custom JavaScript variable, and can also be partially useful when writing custom HTML tags. <a href="https://tagmanager.google.com/">Google Tag Manager</a> uses a slightly different version of JavaScript, know as GtmScript - it has to be ES5 and has its own syntax:<br><br>
 
-* Google Tag Manager's Custom JavaScript variables must be wrapped into an anonymous function (that is not valid JavaScript) that has to end in a ')' (and not in a ';'), and they must return something, like the example below:<br>
+* <a href="https://tagmanager.google.com/">Google Tag Manager</a>'s Custom JavaScript variables must be wrapped into an anonymous function (that is not valid JavaScript) that has to end in a ')' (and not in a ';'), and they must return something, like the example below:<br>
 <code>function () { return true; }</code>
 
-* And this is how to reference other Google Tag Manager variables:<br>
+* And this is how to reference other <a href="https://tagmanager.google.com/">Google Tag Manager</a> variables:<br>
 <code>{{myCustomJsVariable}}</code>
 
 ---
@@ -36,13 +36,12 @@ or<br>
 > I personally use this script to write shorter code, mainly by using arrow functions. I never used it to incorporate third party codes that were written in a version above ES5, but it also works in these cases, and it's particularly useful when mixing code from different versions of JavaScript.<br><br>
 ---
 <h3>2 - The second step is to use this script to remove a function expression. A function expression is simply a common JavaScript function wrapped by parentheses:</h3>
-
- <strong>Example</strong> - function expression:<br>
+<strong>Example</strong> - function expression:<br>
 <code>( function someFunction(){ return true; });</code><br><br>
 
-> When creating a custom JavaScript variable in Google Tag Manager, it's a good practice to write an anonymous function:<br><br>
+> When creating a custom JavaScript variable in <a href="https://tagmanager.google.com/">Google Tag Manager</a>, it's a good practice to write an anonymous function:<br><br>
 
-<strong>Example</strong> - custom JavaScript variable (Google Tag Manager):<br>
+<strong>Example</strong> - custom JavaScript variable (<a href="https://tagmanager.google.com/">Google Tag Manager</a>):<br>
 <code>function() { return true; }</code><br><br>
 
 > The problem is: how to write the code above using an arrow function?<br>
@@ -53,7 +52,7 @@ or<br>
 
 <code>(function () { return true; });</code><br><br>
 
-> And this is not what Google Tag Manager wants. You would need to manually remove the outern parentheses and the semicolon (;) to obtain a valid ES5 GtmScript, like the example below:
+> And this is not what <a href="https://tagmanager.google.com/">Google Tag Manager</a> wants. You would need to manually remove the outern parentheses and the semicolon (;) to obtain a valid ES5 GtmScript, like the example below:
 
 <code>function () { return true; }</code><br><br>
 
@@ -65,14 +64,14 @@ or<br>
 
 > And having to delete things is fine for a single file, but when you need to convert several or many files, it's very useful to do this is an automatic way to avoid making mistakes, and this is exactly what this is script does.<br><br>
 ---
-> A second problem handled by this script is how to reference other Google Tag Manager variables (native or customized), since the code below is also unvalid JavaScript code:
+> A second problem handled by this script is how to reference other <a href="https://tagmanager.google.com/">Google Tag Manager</a> variables (native or customized), since the code below is also unvalid JavaScript code:
 
-<strong>Example</strong> - Google Tag Manager variable reference:<br>
+<strong>Example</strong> - <a href="https://tagmanager.google.com/">Google Tag Manager</a> variable reference:<br>
 <code>{{myVariable}}</code>
 
 > The code above would generate an error when running tsc. I found out that a nice workaround is to wrap these variable into single ou double quotes, as in the examples below. This script will make sure these single or double quotes disappear - they will only allow the transpiler to work correctly.
 
-<strong>Example</strong> - Google Tag Manager variable reference workaround, producing valid JavaScript:<br>
+<strong>Example</strong> - <a href="https://tagmanager.google.com/">Google Tag Manager</a> variable reference workaround, producing valid JavaScript:<br>
 <code>'{{myVariable}}'</code><br>
 or<br>
 <code>"{{myVariable}}"</code><br>
@@ -84,4 +83,4 @@ or<br>
 
 <code>es5/example.gtm.js</code><br><br>
 
-> This .gtm.js file content is ready to copied and pasted into a custom JavaScript variable in Google Tag Manager. It's not valid JavaScript, but it's valid GtmScript, and this is what Web Analysts need. This way you can edit your codes with arrow functions and modern syntax locally, e, when the moment to upload the code to Google Tag Manager, use tsc and this script to obtain the code in GtmScript.<br>
+> This .gtm.js file content is ready to copied and pasted into a custom JavaScript variable in <a href="https://tagmanager.google.com/">Google Tag Manager</a>. It's not valid JavaScript, but it's valid GtmScript, and this is what Web Analysts need. This way you can edit your codes with arrow functions and modern syntax locally, e, when the moment to upload the code to <a href="https://tagmanager.google.com/">Google Tag Manager</a>, use tsc and this script to obtain the code in GtmScript.<br>

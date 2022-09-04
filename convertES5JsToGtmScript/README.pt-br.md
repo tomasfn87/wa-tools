@@ -17,12 +17,12 @@ ou<br>
 ---
 <br><h1>Por quê esse script foi criado?</h1>
 
-> Esse script é para ser usado quando um código JavaScript de uma versão acima da ES5 precisa se usado em uma variável personalizada JavaScript no Google Tag Manager, e também pode ser parcialmente útil ao escrever tags HTML personalizadas. O Google Tag Manager usa uma versão ligeiramente diferente de JavaScript, conhecida como GtmScript - ela tem que estar na versão ES5 e têm sintaxe própria:<br><br>
+> Esse script é para ser usado quando um código JavaScript de uma versão acima da ES5 precisa se usado em uma variável personalizada JavaScript no <a href="https://tagmanager.google.com/">Google Tag Manager</a>, e também pode ser parcialmente útil ao escrever tags HTML personalizadas. O <a href="https://tagmanager.google.com/">Google Tag Manager</a> usa uma versão ligeiramente diferente de JavaScript, conhecida como GtmScript - ela tem que estar na versão ES5 e têm sintaxe própria:<br><br>
 
-* As variáveis JavaScript personalizadas do Google Tag Manager devem estar envolvidas por uma função anônima (que não é JavaScript válido) que devem terminar em um ')' (e não em um ';'), e devem retornar alguma coisa, como o exemplo abaixo:<br>
+* As variáveis JavaScript personalizadas do <a href="https://tagmanager.google.com/">Google Tag Manager</a> devem estar envolvidas por uma função anônima (que não é JavaScript válido) que devem terminar em um ')' (e não em um ';'), e devem retornar alguma coisa, como o exemplo abaixo:<br>
 <code>function () { return true; }</code>
 
-* E é assim que se referenciam outras variáveis do Google Tag Manager:<br>
+* E é assim que se referenciam outras variáveis do <a href="https://tagmanager.google.com/">Google Tag Manager</a>:<br>
 <code>{{minhaVariavelJsPersonalizada}}</code>
 
 ---
@@ -36,13 +36,12 @@ ou<br>
 > Pessoalmente eu uso esse script para escrever menos código, principalmente usando arrow functions. Eu nunca usei o script para incorporar códigos de terceiros que tenham sido escritos em uma versão acima da ES5, mas ele também funciona nesses casos, e é particularmente útil ao combinar códigos de diferentes versões do JavaScript.<br><br>
 
 2 - O segundo passo é usar esse script para remover uma expressão de função (function expression). Uma expressão de função é apenas uma função JavaScript entre parênteses:<br><br>
-
 <strong>Exemplo</strong> - expressão de função:<br>
 <code>( function algumaFuncao(){ return true; });</code><br><br>
 
-> Ao criar uma variável JavaScript no Google Tag Manager, é uma boa prática escrever funções anônimas:<br><br>
+> Ao criar uma variável JavaScript no <a href="https://tagmanager.google.com/">Google Tag Manager</a>, é uma boa prática escrever funções anônimas:<br><br>
 
-<strong>Exemplo</strong> - variável JavaScript personalizada (Google Tag Manager):<br>
+<strong>Exemplo</strong> - variável JavaScript personalizada (<a href="https://tagmanager.google.com/">Google Tag Manager</a>):<br>
 <code>function() { return true; }</code><br><br>
 
 > O problema é: como escrever o código acima usando uma arrow function?<br>
@@ -53,7 +52,7 @@ ou<br>
 
 <code>( function () { return true; });</code><br><br>
 
-> E não é isso que o Google Tag Manager quer. Você teria que manualmente remover os parênteses externos e o ponto e vírgula (;) para obter um código ES5 GtmScript válido, como o exemplo abaixo:
+> E não é isso que o <a href="https://tagmanager.google.com/">Google Tag Manager</a> quer. Você teria que manualmente remover os parênteses externos e o ponto e vírgula (;) para obter um código ES5 GtmScript válido, como o exemplo abaixo:
 
 <code>function () { return true; }</code><br><br>
 
@@ -65,14 +64,14 @@ ou<br>
 
 > E tudo bem ter que deletar algumas coisas em um único arquivo, mas quando você precisa converter vários ou muitos arquivos, é muito útil fazer essa operação de forma automatizada, e é exatamente isso que esse script faz.<br><br>
 ---
-> Um segundo problema lidado por esse script é como referenciar outras variáveis do Google Tag Manager (nativas ou personalizadas), já que o código abaixo também é um código JavaScript inválido:
+> Um segundo problema lidado por esse script é como referenciar outras variáveis do <a href="https://tagmanager.google.com/">Google Tag Manager</a> (nativas ou personalizadas), já que o código abaixo também é um código JavaScript inválido:
 
-<strong>Exemplo</strong> - referência a uma variável do Google Tag Manager:<br>
+<strong>Exemplo</strong> - referência a uma variável do <a href="https://tagmanager.google.com/">Google Tag Manager</a>:<br>
 <code>{{minhaVariavel}}</code>
 
 > O código acima iria gerar um erro ao rodar o tsc. Descobri que uma maneira de contornar esse problema é envolver essas variáveis em aspas simples ou duplas, como nos exemplos abaixo. Esse script se assegurará que as aspas desapareçam - elas apenas irão servir para permitir que o transpilador trabalhe corretamente.
 
-<strong>Exemplo</strong> - como fazer referência a uma varíavel Google Tag Manager com uma sintaxe válida em JavaScript:<br>
+<strong>Exemplo</strong> - como fazer referência a uma varíavel <a href="https://tagmanager.google.com/">Google Tag Manager</a> com uma sintaxe válida em JavaScript:<br>
 <code>'{{minhaVariavel}}'</code><br>
 ou<br>
 <code>"{{minhaVariavel}}"</code><br>
@@ -84,4 +83,4 @@ ou<br>
 
 <code>es5/exemplo.gtm.js</code><br><br>
 
-> O conteúdo desse arquivo .gtm.js está pronto para ser copiado e colado em uma variável JavaScript personalizada no Google Tag Manager. Não é JavaScript válido, mas é GtmScript válido, e é isso que o pessoal de Web Analytics precisa. Desse modo você pode editar seus códigos com arrow functions e sintaxe moderna localmente, e, quando for o momento de subir o código para o Google Tag Manager, usar o tsc e esse script para obter o código em GtmScript.<br>
+> O conteúdo desse arquivo .gtm.js está pronto para ser copiado e colado em uma variável JavaScript personalizada no <a href="https://tagmanager.google.com/">Google Tag Manager</a>. Não é JavaScript válido, mas é GtmScript válido, e é isso que o pessoal de Web Analytics precisa. Desse modo você pode editar seus códigos com arrow functions e sintaxe moderna localmente, e, quando for o momento de subir o código para o <a href="https://tagmanager.google.com/">Google Tag Manager</a>, usar o tsc e esse script para obter o código em GtmScript.<br>
