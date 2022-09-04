@@ -1,20 +1,21 @@
 <h1>Baixar o projeto em si e suas dependências<h1>
 
-1 - Entre nesse website:<br>
+<h3>1 - Entre nesse website:</h3>
 <a href='https://download-directory.github.io'>https://download-directory.github.io</a><br><br>
 
-2 - Cole essa URL no campo de entrada e aperte Enter para baixar apenas essa pasta ao invés de todo o repositório wa-tools:<br>
+<h3>2 - Cole essa URL no campo de entrada e aperte Enter para baixar apenas essa pasta ao invés de todo o repositório wa-tools:</h3>
 <a href='https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript'>https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript</a><br><br>
 
-3 - Acesse a pasta e rode o comando abaixo para instalar as dependências do projeto (Node.js / npm devem estar instalados):<br>
+<h3>3 - Acesse a pasta e rode o comando abaixo para instalar as dependências do projeto (Node.js / npm devem estar instalados):</h3>
 <code>npm install</code><br>
 ou<br>
 <code>npm i</code><br><br>
 
-4 - Instale as bibliotecas do TypeScript globalmente na sua máquina para usar como o seu transpilador (você também pode usar Babel):<br>
+<h3>4 - Instale as bibliotecas do TypeScript globalmente na sua máquina para usar como o seu transpilador (você também pode usar Babel):</h3>
 <code>sudo npm i -g typescript tsc ts-node</code><br>
 
-<br><h1>Por quê esse script foi criado?<h1>
+---
+<br><h1>Por quê esse script foi criado?</h1>
 
 > Esse script é para ser usado quando um código JavaScript de uma versão acima da ES5 precisa se usado em uma variável personalizada JavaScript no Google Tag Manager, e também pode ser parcialmente útil ao escrever tags HTML personalizadas. O Google Tag Manager usa uma versão ligeiramente diferente de JavaScript, conhecida como GtmScript - ela tem que estar na versão ES5 e têm sintaxe própria:<br><br>
 
@@ -24,7 +25,8 @@ ou<br>
 * E é assim que se referenciam outras variáveis do Google Tag Manager:<br>
 <code>{{minhaVariavelJsPersonalizada}}</code>
 
-<br><h1>Escrevendo JavaScript em qualquer versão e convertendo para GtmScript<h1>
+---
+<br><h1>Escrevendo JavaScript em qualquer versão e convertendo para GtmScript</h1>
 
 1 - O primeiro passo é converter seu arquivo JavaScript > ES5 usando algum transpilador. Eu uso o tsc (TypeScript compiler - compilador TypeScript), passando a opção --allowJs para habilitar suporte a arquivos que não sejam TypeScript.<br><br>
 

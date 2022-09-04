@@ -1,20 +1,21 @@
-<h1>Download the project itself and its dependencies<h1>
+<h1>Download the project itself and its dependencies</h1>
 
-1 - Visit this website:<br>
+<h3>1 - Visit this website:</h3>
 <a href='https://download-directory.github.io'>https://download-directory.github.io</a><br><br>
 
-2 - Paste this URL in the input field and press Enter to download only this folder instead of the whole wa-tools repository:<br>
+<h3>2 - Paste this URL in the input field and press Enter to download only this folder instead of the whole wa-tools repository:</h3>
 <a href='https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript'>https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript</a><br><br>
 
-3 - Access the folder and run the command above to install the project's dependencies (Node.js / npm must be installed):<br>
+<h3>3 - Access the folder and run the command above to install the project's dependencies (Node.js / npm must be installed):</h3>
 <code>npm install</code><br>
 or<br>
 <code>npm i</code><br><br>
 
-4 - Install TypeScript libraries globally on your machine to use it as your transpiler (you could also use Babel):<br>
+<h3>4 - Install TypeScript libraries globally on your machine to use it as your transpiler (you could also use Babel):</h3>
 <code>sudo npm i -g typescript tsc ts-node</code><br>
 
-<br><h1>Why was this script created?<h1>
+---
+<br><h1>Why was this script created?</h1>
 
 > This script is meant to be used when a JavaScript code from a version above ES5 needs to be used into a Google Tag Manager custom JavaScript variable, and can also be partially useful when writing custom HTML tags. Google Tag Manager uses a slightly different version of JavaScript, know as GtmScript - it has to be ES5 and has its own syntax:<br><br>
 
@@ -24,16 +25,17 @@ or<br>
 * And this is how to reference other Google Tag Manager variables:<br>
 <code>{{myCustomJsVariable}}</code>
 
-<br><h1>Writing JavaScript in any version and converting to GtmScript<h1>
+---
+<br><h1>Writing JavaScript in any version and converting to GtmScript</h1>
 
-1 - The first step is to convert your > ES5 JavaScript file using some transpiler. I use tsc (TypeScript compiler), passing the flag --allowJs to enable support for non TypeScript files.<br><br>
+<h3>1 - The first step is to convert your > ES5 JavaScript file using some transpiler. I use tsc (TypeScript compiler), passing the flag --allowJs to enable support for non TypeScript files.</h3>
 
 <strong>Example</strong> - create a folder named 'es5' and generate an ES5 file from any version of JavaScript supported by the transpiler:<br>
 <code>mkdir es5 && tsc --allowJs --removeComments --target es5 example.js --outDir es5</code><br><br>
 
 > I personally use this script to write shorter code, mainly by using arrow functions. I never used it to incorporate third party codes that were written in a version above ES5, but it also works in these cases, and it's particularly useful when mixing code from different versions of JavaScript.<br><br>
-
-2 - The second step is to use this script to remove a function expression. A function expression is simply a common JavaScript function wrapped by parentheses:<br><br>
+---
+<h3>2 - The second step is to use this script to remove a function expression. A function expression is simply a common JavaScript function wrapped by parentheses:</h3>
 
  <strong>Example</strong> - function expression:<br>
 <code>( function someFunction(){ return true; });</code><br><br>
