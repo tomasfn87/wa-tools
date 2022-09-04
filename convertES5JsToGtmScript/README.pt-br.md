@@ -46,6 +46,7 @@ ou<br>
 <code>function() { return true; }</code><br><br>
 
 > O problema é: como escrever o código acima usando uma arrow function?<br>
+
 <code>() => { return true; }</code></br><br>
 
 > Infelizmente, o código acima não é a resposta correta. Mesmo que pareçam idênticos, quando você rodar o tsc para converter esse trecho de código para ES5, esse será o resultado:<br>
@@ -76,7 +77,7 @@ ou<br>
 ou<br>
 <code>"{{minhaVariavel}}"</code><br>
 
-<strong>Exemplo</strong> - rodando o script e obtendo um arquivo em GtmScript:
+<strong>Exemplo</strong> - rodando o script e obtendo um arquivo em GtmScript:<br>
 <code>node convert_es5_javascript_to_gtmscript.js es5/exemplo.js</code><br>
 
 > Rodar o código acima vai gerar outro arquivo com o mesmo nome base, mas com uma extensão diferente:<br>
