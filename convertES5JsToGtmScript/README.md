@@ -83,4 +83,4 @@ or<br>
 
 <code>es5/example.gtm.js</code><br><br>
 
-> This .gtm.js file content is ready to copied and pasted into a custom JavaScript variable in <a href="https://tagmanager.google.com/">Google Tag Manager</a>. It's not valid JavaScript, but it's valid GtmScript, and this is what Web Analysts need. This way you can edit your codes with arrow functions and modern syntax locally, e, when the moment to upload the code to <a href="https://tagmanager.google.com/">Google Tag Manager</a>, use tsc and this script to obtain the code in GtmScript.<br>
+> This .gtm.js file content is ready to copied and pasted into a custom JavaScript variable in <a href="https://tagmanager.google.com/">Google Tag Manager</a>. It's not valid JavaScript, but it's valid GtmScript, and this is what Web Analysts need. This way you can edit your codes with arrow functions and modern syntax locally, and, when the moment to upload the code to <a href="https://tagmanager.google.com/">Google Tag Manager</a>, use tsc and this script to obtain the code in GtmScript.<br>
