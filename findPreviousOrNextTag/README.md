@@ -14,7 +14,7 @@ You cannot use the ```parentNode``` or ```parentElement``` JavaScript method, be
 
 <br><br>
 
-### 1. When not to use
+### 1) When not to use
 
 <br>
 
@@ -22,7 +22,6 @@ You cannot use the ```parentNode``` or ```parentElement``` JavaScript method, be
 
 <b>Example</b> - each group is wrapped in a ```<div>```: you have to access the closest ```<h1>``` content from a click on one of the ```<a>``` tags
 
-You want your tag to tell the user "<i>this click is under this title</i>" (the closest ```<h1>```'s content to the north)
 
 ```html
 <div>
@@ -39,25 +38,27 @@ You want your tag to tell the user "<i>this click is under this title</i>" (the 
 </div>
 ```
 
+You want your tag to tell the user "<i>this click is under this title</i>" (the closest ```<h1>```'s content upwards). So, a click on ```Click here 1``` would be related to ```Title 1```, a click on ```Click here 2``` to ```Title 2```, and so on.
 
+<br>
 
-The code below is a <a href="https://tagmanager.google.com">Google Tag Manager</a> custom JavaScript variable that is doing the job described above: it will correlate a click on a ```<a>``` with the ```<h1>```'s content under the same ```<div>```.
+The code below is a <a href="https://tagmanager.google.com">Google Tag Manager</a> custom JavaScript variable that is doing the job described above: it will correlate a click on a ```<a>``` with the ```<h1>```'s content under the same ```<div>```:
 
-```{{myVariable}}``` is how you access it from another custom JavaScript variable or from a custom HTML tag, or to use its output as a tag's parameter value.
 
 <br>
 
 Content of ```myVariable```:
-
 ```
 function () {
   return {{Click Element}}.parentNode.parentNode.querySelector('h1');
 }
 ```
 
-The way is clear here: you just have to go up two elements and then use the ```querySelector```</code> method.
+<i>The way is clear here</i>: you just have to go up two elements and then use the ```querySelector``` method: the first ```parentNode``` will point to the ```<p>```; the second ```parentNode``` will point to the ```<div>``` and then the ```querySelector('h1')``` will point to the first ```<h1>```.
 
 <br>
+
+```{{myVariable}}``` is how you access it from another custom JavaScript variable or from a custom HTML tag, or to use its output as a tag's parameter value.
 
 ```{{Click Element}}``` is one of <a href="https://tagmanager.google.com">Google Tag Manager</a>'s most useful default variables. It returns the clicked (or touched) element <b>HTML tag</b>, allowing you to manipulate and navigate through its siblings, children and parent tags, like this project's <b>functions</b> do.
 
@@ -65,15 +66,13 @@ The way is clear here: you just have to go up two elements and then use the ```q
 
 <br><br>
 
-### 2. When to use
+### 2) When to use
 
 <br>
 
 <i>The elements are not clearly grouped, because they're wrapped by only one mother tag.</i>
 
 <b>Example</b> - the groups are all inside a mother tag (```<div>```):
-You need to reference a ```<h1>``` value from a click on of the ```<a>```, but, if you use the method described in 1), you will always get the first ```<h1>```.
-
 
 ```html
 <div>
@@ -86,11 +85,19 @@ You need to reference a ```<h1>``` value from a click on of the ```<a>```, but, 
 </div>
 ```
 
-That's when this project comes in handy: you need to navigate through the sibling tags, meaning you don't want to acess the tag's parent, but its closest brother, to the north or to the south.
+You need to reference a ```<h1>``` value from a click on one of the ```<a>```, but, if you use the method described in 1), you will always get the first ```<h1>```.
 
 <br>
 
 You need that a click on ```Click here 1``` to return ```Title 1```; a click on ```Click here 2``` to return ```Title 2```, and so on.
+
+But in this case, applying the ```querySelector``` method on the parent ```<div>``` wouldn't work: it would always return ```Title 1```, because there's a single mother ```<div>``` wrapping all the ```<h1>``` / ```<p>``` pairs.
+
+You want the closest ```<h1>``` sibling tag upwards, in this case.
+
+<br>
+
+That's when this project comes in handy: you need to navigate through the sibling tags, meaning you don't want to access the tag's parent tag, but you want to search through its closest brothers, both upwards or downards, and only then, go up, if a tag with the name you specified is not present.
 
 ---
 <br><br>
@@ -103,7 +110,7 @@ You need that a click on ```Click here 1``` to return ```Title 1```; a click on 
 
 <br>
 
-### This is the main, base function, and it's called by functions 2) to 5), directly or indirectly.
+### This is the base function, and it's called by functions 2) to 5), directly or indirectly, and it's <i>not</i> meant to be used by itself.
 
 <br>
 
@@ -133,7 +140,7 @@ It takes as its first argument an <b>HTML tag</b>, and as its second argument a 
 
 <br>
 
-## 2. findFirstPreviousSiblingTag
+## 2) findFirstPreviousSiblingTag
 
 <br>
 
@@ -143,7 +150,7 @@ It takes as its first argument an <b>HTML tag</b>, and as its second argument a 
 
 <br>
 
-## 3. findFirstPreviousTag
+## 3) findFirstPreviousTag
 
 <br>
 
@@ -153,7 +160,7 @@ It takes as its first argument an <b>HTML tag</b>, and as its second argument a 
 
 <br>
 
-## 4. findFirstNextSiblingTag
+## 4) findFirstNextSiblingTag
 
 <br>
 
@@ -163,7 +170,7 @@ It takes as its first argument an <b>HTML tag</b>, and as its second argument a 
 
 <br>
 
-## 5. findFirstNextTag
+## 5) findFirstNextTag
 
 <br>
 
