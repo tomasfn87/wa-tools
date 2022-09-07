@@ -4,12 +4,19 @@
 
 ## Application
 
-This script is meant to help when working with Web Tracking, and you have groups of repeated elements all inside one container tag, that may be a ```<div>```, for example.
+<br>
+
+This script is meant to help when working with <b>Web Tracking</b> (specially with <a href="https://tagmanager.google.com">Google Tag Manager</a>) and you have groups of repeated elements all inside a mother tag, that may be a ```<div>``` or a ```<section>```, for example.
 
 You cannot use the ```parentNode``` or ```parentElement``` JavaScript method, because the tags are siblings: they are all inside a mother tag.
 
 ---
+
+<br><br>
+
 ### 1. When not to use
+
+<br>
 
 <b>Example</b> - each group is wrapped in a ```<div>```:
 You have to get the closest ```<h1>``` content from a click on one of the ```<a>```'s:
@@ -29,18 +36,29 @@ You have to get the closest ```<h1>``` content from a click on one of the ```<a>
 </div>
 ```
 
-You just have to go up two elements and then use the ```querySelector```</code> method:
+The code above is a <a href="https://tagmanager.google.com">Google Tag Manager</a> custom JavaScript variable. The way is clear here: you just have to go up two elements and then use the ```querySelector```</code> method:
 
 ```javascript
-return {{Click Element}}.parentNode.parentNode.querySelector('h1')
+function () {
+  return {{Click Element}}.parentNode.parentNode.querySelector('h1');
+}
 ```
+
+<br>
+
+```{{Click Element}}``` is a variable available in <a href="https://tagmanager.google.com">Google Tag Manager</a> that returns the clicked or touched element <b>HTML tag</b>.
+
 ---
+
+<br><br>
+
 ### 2. When to use
+
+<br>
 
 <b>Example</b> - the groups are all inside a mother tag (```<div>```):
 You need to reference a ```<h1>``` value from a click on of the ```<a>```, but, if you use the method described in 1), you will always get the first ```<h1>```.
 
-That's when this projects comes handy: you need to navigate through the sibling tags.
 
 ```html
 <div>
@@ -52,6 +70,10 @@ That's when this projects comes handy: you need to navigate through the sibling 
   <p><a href="#">Click here 3</a></p>
 </div>
 ```
+
+That's when this projects comes handy: you need to navigate through the sibling tags:
+
+You need that a click on ```Click here 1``` to return ```Title 1```; a click on ```Click here 2``` to return ```Title 2```, and so on.
 
 ---
 <br><br>
@@ -81,11 +103,11 @@ This function takes as its first argument an <b>HTML tag</b>, and as its second 
 }
 ```
 
-```#1: ``` contains the tag received as argument<br>
-```#2: ``` if <b>'both'</b> or <b>'next'</b> is passed as second argument, it will contain all the tags after the <b>HTML tag</b> received as first argument, as an array<br>
-```#3: ``` if <b>'both'</b> or <b>'previous'</b> is passed as second argument, it will contain all the tags before the <b>HTML tag</b> received as first argument, as an array<br>
-```#4: ``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return all the sibling tags as an array; the <b>HTML tag</b> received as first argument will be into the correct position inside the array<br>
-```#5: ``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return the tag's position in 'toArray', allowing you to access it easily<br>
+```#1:``` contains the tag received as argument<br>
+```#2:``` if <b>'both'</b> or <b>'next'</b> is passed as second argument, it will contain all the tags after the <b>HTML tag</b> received as first argument, as an array<br>
+```#3:``` if <b>'both'</b> or <b>'previous'</b> is passed as second argument, it will contain all the tags before the <b>HTML tag</b> received as first argument, as an array<br>
+```#4:``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return all the sibling tags as an array; the <b>HTML tag</b> received as first argument will be into the correct position inside the array<br>
+```#5:``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return the tag's position in 'toArray', allowing you to access it easily<br>
 
 ---
 
