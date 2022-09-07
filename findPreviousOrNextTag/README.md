@@ -18,8 +18,11 @@ You cannot use the ```parentNode``` or ```parentElement``` JavaScript method, be
 
 <br>
 
-<b>Example</b> - each group is wrapped in a ```<div>```:
-You have to get the closest ```<h1>``` content from a click on one of the ```<a>```'s:
+<i>The elements are clearly grouped; they're wrapped by different mother tags, that allow a</i> ```querySelector``` <i>method to do the job</i>.
+
+<b>Example</b> - each group is wrapped in a ```<div>```: you have to access the closest ```<h1>``` content from a click on one of the ```<a>``` tags
+
+You want your tag to tell the user "<i>this click is under this title</i>" (the closest ```<h1>```'s content to the north)
 
 ```html
 <div>
@@ -36,17 +39,27 @@ You have to get the closest ```<h1>``` content from a click on one of the ```<a>
 </div>
 ```
 
-The code above is a <a href="https://tagmanager.google.com">Google Tag Manager</a> custom JavaScript variable. The way is clear here: you just have to go up two elements and then use the ```querySelector```</code> method:
 
-```javascript
+
+The code below is a <a href="https://tagmanager.google.com">Google Tag Manager</a> custom JavaScript variable that is doing the job described above: it will correlate a click on a ```<a>``` with the ```<h1>```'s content under the same ```<div>```.
+
+```{{myVariable}}``` is how you access it from another custom JavaScript variable or from a custom HTML tag, or to use its output as a tag's parameter value.
+
+<br>
+
+Content of ```myVariable```:
+
+```
 function () {
   return {{Click Element}}.parentNode.parentNode.querySelector('h1');
 }
 ```
 
+The way is clear here: you just have to go up two elements and then use the ```querySelector```</code> method.
+
 <br>
 
-```{{Click Element}}``` is a variable available in <a href="https://tagmanager.google.com">Google Tag Manager</a> that returns the clicked or touched element <b>HTML tag</b>.
+```{{Click Element}}``` is one of <a href="https://tagmanager.google.com">Google Tag Manager</a>'s most useful default variables. It returns the clicked (or touched) element <b>HTML tag</b>, allowing you to manipulate and navigate through its siblings, children and parent tags, like this project's <b>functions</b> do.
 
 ---
 
@@ -55,6 +68,8 @@ function () {
 ### 2. When to use
 
 <br>
+
+<i>The elements are not clearly grouped, because they're wrapped by only one mother tag.</i>
 
 <b>Example</b> - the groups are all inside a mother tag (```<div>```):
 You need to reference a ```<h1>``` value from a click on of the ```<a>```, but, if you use the method described in 1), you will always get the first ```<h1>```.
@@ -71,59 +86,54 @@ You need to reference a ```<h1>``` value from a click on of the ```<a>```, but, 
 </div>
 ```
 
-That's when this projects comes handy: you need to navigate through the sibling tags:
+That's when this project comes in handy: you need to navigate through the sibling tags, meaning you don't want to acess the tag's parent, but its closest brother, to the north or to the south.
+
+<br>
 
 You need that a click on ```Click here 1``` to return ```Title 1```; a click on ```Click here 2``` to return ```Title 2```, and so on.
 
 ---
 <br><br>
 
-## Function description
----
+# Function description
 
 <br>
 
-### 1) getOrderedSiblingTags( <b>tagElement</b>, <b>s</b>='both' <b>)</b>
+## 1) getOrderedSiblingTags( tagElement, s = 'both')
 
 <br>
 
-This function takes as its first argument an <b>HTML tag</b>, and as its second argument a parameter: <b>'previous'</b>, <b>'next'</b> or <b>'both'</b>.
+### This is the main, base function, and it's called by functions 2) to 5), directly or indirectly.
 
-<b>getOrderedSiblingTags</b> returns and object that contains the tag itself and its siblings, as well as two other functions when the parameter <b>'both'</b> is received:
+<br>
 
-```
+It takes as its first argument an <b>HTML tag</b>, and as its second argument a parameter: <b>'previous'</b>, <b>'next'</b> or <b>'both'</b>.
+
+<b>getOrderedSiblingTags</b> returns an object that contains the <b>HTML tag</b> received as argument itself and all of its siblings splitted in two arrays, <b>'previous'</b> and <b>'next'</b>. It can also output two side functions (when the parameter <b>'both'</b> is received), <b>'toArray'</b> and <b>'tagPosition'</b>, that return all the sibling tags as an array and the <b>HTML tag</b> received as argument's position in this array, respectively.
+
+```javascript
 {
-  tag: #1,
+  tag: "#1 (REQUIRED) the HTML tag received as argument",
   siblings: {
-    next: #2,
-    previous: #3
+    next: "#2 [ ...next ] || []",
+    previous: "#3 [ ...previous ] || []"
   },
-  toArray: #4,
-  tagPosition: #5
+  toArray: "#4 [ ...previous, tag, ...next ] || [ tag ] || [ ...previous, tag ] || [ tag, ...next ]",
+  tagPosition: "#5 - integer (previous.length)"
 }
 ```
 
-```#1:``` contains the tag received as argument<br>
-```#2:``` if <b>'both'</b> or <b>'next'</b> is passed as second argument, it will contain all the tags after the <b>HTML tag</b> received as first argument, as an array<br>
-```#3:``` if <b>'both'</b> or <b>'previous'</b> is passed as second argument, it will contain all the tags before the <b>HTML tag</b> received as first argument, as an array<br>
-```#4:``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return all the sibling tags as an array; the <b>HTML tag</b> received as first argument will be into the correct position inside the array<br>
-```#5:``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return the tag's position in 'toArray', allowing you to access it easily<br>
+```#1:``` contains the tag received as argument by <b>getOrderedSiblingTags</b>;<br>
+```#2:``` if <b>'both'</b> or <b>'next'</b> is passed as second argument, it will contain all the tags after the <b>HTML tag</b> received as first argument, as an array;<br>
+```#3:``` if <b>'both'</b> or <b>'previous'</b> is passed as second argument, it will contain all the tags before the <b>HTML tag</b> received as first argument, as an array;<br>
+```#4:``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return all the sibling tags as an array; the <b>HTML tag</b> received as first argument will be into the correct position inside the array;<br>
+```#5:``` if <b>'both'</b> is passed as second argument, this <b>function</b> will be available and will return the tag's position in 'toArray', allowing you to access it easily.<br>
 
 ---
 
 <br>
 
-### 2. findFirstPreviousSiblingTag
-
-<br>
-
-
-
----
-
-<br>
-
-### 3. findFirstPreviousTag
+## 2. findFirstPreviousSiblingTag
 
 <br>
 
@@ -133,7 +143,7 @@ This function takes as its first argument an <b>HTML tag</b>, and as its second 
 
 <br>
 
-### 4. findFirstNextSiblingTag
+## 3. findFirstPreviousTag
 
 <br>
 
@@ -143,7 +153,17 @@ This function takes as its first argument an <b>HTML tag</b>, and as its second 
 
 <br>
 
-### 5. findFirstNextTag
+## 4. findFirstNextSiblingTag
+
+<br>
+
+
+
+---
+
+<br>
+
+## 5. findFirstNextTag
 
 <br>
 
