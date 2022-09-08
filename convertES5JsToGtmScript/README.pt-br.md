@@ -71,7 +71,7 @@ Pessoalmente eu uso esse script para escrever menos código, principalmente usan
 
 <br>
 
-> Ao criar uma variável JavaScript no <a href="https://tagmanager.google.com/">Google Tag Manager</a>, é uma boa prática escrever funções anônimas:<br><br>
+Ao criar uma variável JavaScript no <a href="https://tagmanager.google.com/">Google Tag Manager</a>, é uma boa prática escrever funções anônimas:<br><br>
 
 <strong>Exemplo</strong> - variável JavaScript personalizada (<a href="https://tagmanager.google.com/">Google Tag Manager</a>):<br>
 

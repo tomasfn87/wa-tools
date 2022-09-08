@@ -92,7 +92,7 @@ Você precisa que um clique em ```Clique aqui 1``` retorne ```Título 1```; que 
 
 Mas, nesse caso, aplicar o método ```querySelector```na ```<div>``` mãe não iria funcionar: ele sempre retornaria ```Título 1```, pois existe uma única ```<div>``` mãe envolvendo todas os pares ```<h1>``` / ```<p>```.
 
-VocÊ quer a ```<h1>``` irmã mais próxima para cima, nesse caso.
+Você quer a ```<h1>``` irmã mais próxima para cima, nesse caso.
 
 <br>
 
@@ -130,10 +130,10 @@ Ela recebe como primeiro argumento uma <b>tag HTML</b>, e, como seu segundo argu
 ```
 
 ```1.``` contém a tag recebida como argumento por <b>getOrderedSiblingTags</b>;<br>
-```2.``` se <b>'both'</b> ou <b>'next'</b> é passado como segundo argumento, ela conterá todas as tags depois da <b>tag HTML</b> recebida como primeiro argumento, como um array;<br>
-```3.``` se <b>'both'</b> ou <b>'previous'</b> é passado como segundo argumento, ela conterá todas as tags antes da <b>tag HTML</b> recebida como primeiro argumento, como um array;<br>
-```4.``` se <b>'both'</b> é passado como segundo argumento, essa <b>função</b> ficará disponível e irá retornar todas as tags irmãs como um array; a <b>tag HTML</b> recebida como primeiro argumento estará na posição correta dentro do array;<br>
-```5.``` se <b>'both'</b> > é passado como segundo argumento, essa <b>função</b> ficará disponível e irá retornar a posição da tag em 'toArray', permitindo que você a acesse facilmente.<br>
+```2.``` se <b>'both'</b> ou <b>'next'</b> for passado como segundo argumento, ela conterá todas as tags depois da <b>tag HTML</b> recebida como primeiro argumento, como um array;<br>
+```3.``` se <b>'both'</b> ou <b>'previous'</b> for passado como segundo argumento, ela conterá todas as tags antes da <b>tag HTML</b> recebida como primeiro argumento, como um array;<br>
+```4.``` se <b>'both'</b> for passado como segundo argumento, essa <b>função</b> ficará disponível e irá retornar todas as tags irmãs como um array; a <b>tag HTML</b> recebida como primeiro argumento estará na posição correta dentro do array;<br>
+```5.``` se <b>'both'</b> for passado como segundo argumento, essa <b>função</b> ficará disponível e irá retornar a posição da tag em 'toArray', permitindo que você a acesse facilmente.<br>
 
 ---
 
