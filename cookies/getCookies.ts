@@ -1,6 +1,6 @@
 const colors = require('colors/safe')
 
-/* 1) Load function getCookiesAsObjArr and then run the command above on the browser console:
+/* 1) Load function getCookiesAsObjArr and then run the command below on the browser console:
 getCookiesAsObjArr(document.URL, document.cookie. 'decode')
 */
 
@@ -42,7 +42,7 @@ const getCookiesAsObjArr:Function = (
   return cookiesAsObjArr
 }
 
-/* 2) Load function printCookieAndURL and then run the command above on the browser console:
+/* 2) Load function printCookieAndURL and then run the command below on the browser console:
 printCookieAndURL(document.URL, document.cookie, 1, 'decode')
 */
 
