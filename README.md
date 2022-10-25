@@ -1,3 +1,3 @@
 # wa-tools
 
-Tools for Web Analytics
+## _Tools for Web Analytics_
