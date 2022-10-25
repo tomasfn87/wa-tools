@@ -1,4 +1,4 @@
-const joinUniqueElementsFromArrsExludingNull = (...arrArr) => {
+const joinUniqueElementsFromArrsExcludingNull = (...arrArr) => {
   if (arrArr.length < 1) return new Array;
   const joinedArrs = new Array;
   for (let arr of arrArr) {
@@ -9,4 +9,4 @@ const joinUniqueElementsFromArrsExludingNull = (...arrArr) => {
   return joinedArrs;
 }
 
-export default joinUniqueElementsFromArrsExludingNull;
+export default joinUniqueElementsFromArrsExcludingNull;
