@@ -5,7 +5,6 @@ const remove_function_expression = (string, loud=false) => {
         return string
     } else if (regexFE.test(string)) {
         const result = string.replace(regexFE, "$1")
-        const display_match = string.replace(result, '')
         loud && console.log('\n - Removendo function expression (FE):\n' + '(,)')
         return result
     }
