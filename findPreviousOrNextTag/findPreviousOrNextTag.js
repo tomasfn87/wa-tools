@@ -1,7 +1,6 @@
-import getOrderedSiblingTags from "./get Ordered Sibling Tags"
+import getOrderedSiblingTags from "./getOrderedSiblingTags"
 
-
-const findFirstPreviousTag = (tagElement, tagName, levelsUp) => {
+export const findFirstPreviousTag = (tagElement, tagName, levelsUp) => {
     if (!findFirstPreviousSiblingTag(tagElement, tagName)) {
         c = 0
         while (c <= levelsUp && tagElement.parentNode) {
@@ -19,7 +18,7 @@ const findFirstPreviousTag = (tagElement, tagName, levelsUp) => {
     }
 }
 
-const findFirstPreviousSiblingTag = (tagElement, tagName) => {
+export const findFirstPreviousSiblingTag = (tagElement, tagName) => {
     let s = getOrderedSiblingTags(tagElement, 'previous')
     if (s.siblings.previous) {
         for (let tag of s.siblings.previous.reverse()) {
@@ -30,7 +29,7 @@ const findFirstPreviousSiblingTag = (tagElement, tagName) => {
     }
 }
 
-const findFirstNextTag = (tagElement, tagName, levelsUp) => {
+export const findFirstNextTag = (tagElement, tagName, levelsUp) => {
     if (!findFirstNextSiblingTag(tagElement, tagName)) {
         c = 0
         while (c <= levelsUp && tagElement.parentNode) {
@@ -48,7 +47,7 @@ const findFirstNextTag = (tagElement, tagName, levelsUp) => {
     }
 }
 
-const findFirstNextSiblingTag = (tagElement, tagName) => {
+export const findFirstNextSiblingTag = (tagElement, tagName) => {
     let s = getOrderedSiblingTags(tagElement, 'next')
     if (s.siblings.next) {
         for (let tag of s.siblings.next) {

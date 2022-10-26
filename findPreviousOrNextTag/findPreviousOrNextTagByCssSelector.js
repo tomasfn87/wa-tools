@@ -1,7 +1,6 @@
-import getOrderedSiblingTags from "./get Ordered Sibling Tags"
+import getOrderedSiblingTags from "./getOrderedSiblingTags"
 
-
-const findFirstPreviousTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
+export const findFirstPreviousTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
     if (!findFirstPreviousSiblingTagByCssSelector(tagElement, cssSelector)) {
         c = 0
         while (c <= levelsUp && tagElement.parentNode) {
@@ -19,7 +18,7 @@ const findFirstPreviousTagByCssSelector = (tagElement, cssSelector, levelsUp) =>
     }
 }
 
-const findFirstPreviousSiblingTagByCssSelector = (tagElement, cssSelector) => {
+export const findFirstPreviousSiblingTagByCssSelector = (tagElement, cssSelector) => {
     let s = getOrderedSiblingTags(tagElement, 'previous')
     if (s.siblings.previous) {
         for (let tag of s.siblings.previous.reverse()) {
@@ -30,7 +29,7 @@ const findFirstPreviousSiblingTagByCssSelector = (tagElement, cssSelector) => {
     }
 }
 
-const findFirstNextTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
+export const findFirstNextTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
     if (!findFirstNextSiblingTag(tagElement, cssSelector)) {
         c = 0
         while (c <= levelsUp && tagElement.parentNode) {
@@ -48,7 +47,7 @@ const findFirstNextTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
     }
 }
 
-const findFirstNextSiblingTagByCssSelector = (tagElement, cssSelector) => {
+export const findFirstNextSiblingTagByCssSelector = (tagElement, cssSelector) => {
     let s = getOrderedSiblingTags(tagElement, 'next')
     if (s.siblings.next) {
         for (let tag of s.siblings.next) {
