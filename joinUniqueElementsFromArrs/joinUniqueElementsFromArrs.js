@@ -6,7 +6,7 @@ const joinUniqueElementsFromArrs = (...arrArr) => {
       !joinedArrs.includes(item) && joinedArrs.push(item);
     }
   }
-  return joinedArrs
+  return joinedArrs;
 };
 
 export default joinUniqueElementsFromArrs;
