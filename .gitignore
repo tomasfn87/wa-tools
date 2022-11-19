@@ -103,9 +103,11 @@ dist
 # TernJS port file
 .tern-port
 
-#convertES5JsToGtmScript
+# convertES5JsToGtmScript
 *es5*
 
-#VsCode
+# VsCode
 *.vscode*
 
+# asdf folder
+.tool-versions
