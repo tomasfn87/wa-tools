@@ -1,0 +1,23 @@
+{
+  "name": "youtube-url-shortener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "youTubeUrlShortener.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "type": "module",
+  "repository": {
+     "type": " git",
+     "url": "git+https://github.com/tomasfn87/wa-tools.git" 
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0"
+  }
+}
