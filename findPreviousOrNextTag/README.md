@@ -1,4 +1,4 @@
-# FindPreviousOrNextTag
+# findPreviousOrNextTag
 
 <br>
 
@@ -6,7 +6,7 @@
 
 <br>
 
-This script is meant to help when working with __Web Tracking__ (specially with <a href="https://tagmanager.google.com">Google Tag Manager</a>) and you have groups of repeated elements all inside a mother tag, that may be a `<div>` or a `<section>`, for example.
+This set of functions is meant to help with __Web Tracking__ (_specially with_ [Google Tag Manager](https://tagmanager.google.com), when you have groups of repeated elements all inside a mother tag, that may be a `<div>` or a `<section>`, for example.
 
 You cannot use the `parentNode` or `parentElement` JavaScript method, because the tags are siblings: they are all inside the same mother tag.
 
@@ -18,7 +18,7 @@ You cannot use the `parentNode` or `parentElement` JavaScript method, because th
 
 <br>
 
-_The elements are clearly grouped; they're wrapped by different mother tags, that allow a_ `querySelector` _method to do the job_.
+*__The elements are clearly grouped; they're wrapped by different mother tags, that allow a__* `querySelector` *__method to do the job.__*
 
 __Example__ - each group is wrapped in a `<div>`: you have to access the closest `<h1>` content from a click on one of the `<a>` tags:
 
@@ -37,11 +37,11 @@ __Example__ - each group is wrapped in a `<div>`: you have to access the closest
 </div>
 ```
 
-You want your tag to tell the user "_this click is under this title_" (the closest `<h1>`'s content upwards). So, a click on `Click here 1` would be related to `Title 1`, a click on `Click here 2` to `Title 2`, and so on.
+You want your tag to tell the user __"this click is under this title"__ (_the closest_ `<h1>`'s _content, upwards_). So, a click on `Click here 1` would be related to `Title 1`, a click on `Click here 2` to `Title 2`, and so on.
 
 <br>
 
-The code below is a <a href="https://tagmanager.google.com">Google Tag Manager</a> custom JavaScript variable that is doing the job described above: it will correlate a click on a `<a>` with the `<h1>`'s content under the same `<div>`:
+The code below is a [Google Tag Manager](https://tagmanager.google.com) custom JavaScript variable that is doing the job described above: it will correlate a click on a `<a>` with the `<h1>`'s content under the same `<div>`:
 
 <br>
 
@@ -53,13 +53,13 @@ function () {
 }
 ```
 
-_The way to follow is clear here_: you just have to go up two elements and then use the `querySelector` method: the first `parentNode` will point to the `<p>` tag; the second `parentNode` will point to the `<div>` tag and then the `querySelector('h1')` will point to the first `<h1>` tag.
+*__The way to follow is clear here__*: you just have to go up two elements and then use the `querySelector` method: the first `parentNode` will point to the `<p>` tag; the second `parentNode` will point to the `<div>` tag and then the `querySelector('h1')` will point to the first `<h1>` tag.
 
 <br>
 
-`{{myVariable}}` is how you access variables, whether from another custom JavaScript variable or from a custom HTML tag, or to use its output as a tag's parameter's value.
+`{{myVariable}}` - this is how to access other variables in [Google Tag Manager](https://tagmanager.google.com), whether from another custom JavaScript variable or from a custom HTML tag, or to use its output as a tag's parameter's value.
 
-There is a set of native variables available. `{{Click Element}}` is one of <a href="https://tagmanager.google.com">Google Tag Manager</a>'s most useful native variables. It returns the clicked (or touched) element __HTML tag__, allowing you to manipulate and navigate through its siblings, children and parent tags, like this project's __functions__ do.
+There is a set of native variables available. `{{Click Element}}` is one of [Google Tag Manager's](https://tagmanager.google.com) most useful native variables. It returns the clicked (_or touched_) element __HTML tag__, allowing you to manipulate and navigate through its siblings, children and parent tags, like this project's __functions__ do.
 
 ---
 
@@ -69,7 +69,7 @@ There is a set of native variables available. `{{Click Element}}` is one of <a h
 
 <br>
 
-_The elements are not clearly grouped, because they're wrapped by only one mother tag._
+*__The elements are not clearly grouped, because they're wrapped by only one mother tag.__*
 
 __Example__ - the groups are all inside a mother tag (`<div>`):
 
@@ -90,13 +90,13 @@ You need to reference a `<h1>` value from a click on one of the `<a>`, but, if y
 
 You need that a click on `Click here 1` to return `Title 1`; a click on `Click here 2` to return `Title 2`, and so on.
 
-But, in this case, applying the `querySelector` method on the parent `<div>` wouldn't work: it would always return `Title 1`, because there's a single mother `<div>` wrapping all the `<h1>` / `<p>` pairs.
+But, in this case, applying the `querySelector` method on the parent `<div>` wouldn't work: it would always return `Title 1`, because there's a single mother `<div>` wrapping all the `<h1>`/`<p>` pairs.
 
 You want the closest `<h1>` sibling tag upwards, in this case.
 
 <br>
 
-That's when this project comes in handy: you need to navigate through the sibling tags, meaning you don't want to access the tag's parent tag, but you want to search through its closest brothers, both upwards or downards, and, only then, go one level up, if a tag with the name you specified is not present.
+That's when this project comes in handy: you need to navigate through the sibling tags, meaning you don't want to access the tag's parent tag, but you want to search through its closest siblings, both upwards or downards, and, only then, go one level up, if a tag with the name you specified is not present.
 
 ---
 
@@ -104,19 +104,19 @@ That's when this project comes in handy: you need to navigate through the siblin
 
 ## Function description
 
-<br><br>
+<br>
 
-### 1) `getOrderedSiblingTags( tagElement, s = 'both')`
+### 1) [`getOrderedSiblingTags( tagElement, s = 'both')`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/getOrderedSiblingTags.js)
 
 <br>
 
-This is the base function, and it's called by functions 2) to 5), directly or indirectly, and it's _not_ meant to be used by itself.
+This is the base function, and it's called by functions 2) to 9), directly or indirectly, and it's _not_ meant to be used by itself.
 
 <br>
 
-It takes as its first argument an __HTML tag__, and, as its second optional argument a parameter: `'previous'`, `'next'` or `'both'` (_'both'_ is the standard value).
+It takes as its first argument an __HTML tag__, and, as its second optional argument a parameter: `'previous'`, `'next'` or `'both'` (`'both'` _is the standard value_).
 
-`getOrderedSiblingTags` returns an object that contains the __HTML tag__ received as argument itself and all of its siblings splitted in two arrays, `'previous'` and `'next'`. It can also output two side functions (when the parameter `'both'` is received), `toArray` and `tagPosition`, that return all the sibling tags as an array and the __HTML tag__ received as argument's position in this array, respectively.
+`getOrderedSiblingTags` returns an object that contains the __HTML tag__ received as argument itself and all of its siblings splitted in two arrays, `'previous'` and `'next'`. It can also output two side functions (_when the parameter_ `'both'` _is received_), `toArray` and `tagPosition`, that return all the sibling tags as an array and the __HTML tag__ received as argument's position in this array, respectively.
 
 <br>
 
@@ -124,56 +124,156 @@ It takes as its first argument an __HTML tag__, and, as its second optional argu
 
 ```javascript
 {
-  tag:         "(REQUIRED) the HTML tag received as argument",
-  siblings: {
-    next:      "[ ...next ] || []",
-    previous:  "[ ...previous ] || []"
-  },
-  toArray:     "[ ...previous, tag, ...next ] || [ tag ] || [ ...previous, tag ] || [ tag, ...next ]",
-  tagPosition: "number (previous.length)"
+    tag:           htmlTag, // the HTML tag received as first argument;
+    siblings: {
+        next:        [ ...next ] || [],    // the sibling tags after 'tag';
+        previous:    [ ...previous ] || [] // the sibling tags before 'tag';
+    },
+    toArray() =>     [ ...previous, tag, ...next ] || [ tag ]
+                         || [ ...previous, tag ] || [ tag, ...next ],
+    // this function returns all the siblings tags, in order, including 'tag';
+    tagPosition() => number // this function returns 'tag's position in 'toArray()'.
 }
 ```
 
-- `tag`: contains the tag received as argument by `getOrderedSiblingTags`;
+- `tag`: the tag received as first argument by `getOrderedSiblingTags`;
 - `siblings.next`: if `'both'` or `'next'` is passed as second argument, it will contain all the tags after the __HTML tag__ received as first argument, as an array;
 - `siblings.previous`: if `'both'` or `'previous'` is passed as second argument, it will contain all the tags before the __HTML tag__ received as first argument, as an array;
-- `toArray`: if `'both'` is passed as second argument, this __function__ will be available and will return all the sibling tags as an array; the __HTML tag__ received as first argument will be into the correct position inside the array;
-- `tagPosition`: if `'both'` is passed as second argument, this __function__ will be available and will return the tag's position in `toArray`, allowing you to access it easily.
+- `toArray()`: if `'both'` is passed as second argument, this __function__ will be available and will return all the sibling tags as an array; the __HTML tag__ received as first argument will be into the correct position inside the array;
+- `tagPosition()`: if `'both'` is passed as second argument, this __function__ will be available and will return the tag's position in `toArray()`, allowing you to access it easily.
 
 ---
 
 <br>
 
-### 2) `findFirstPreviousSiblingTag`
+### 2) [`findFirstPreviousSiblingTag( tagElement, tagName )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
 
 <br>
 
+`findFirstPreviousSiblingTag` calls `getOrderedSiblingTags` with `'previous'` as second argument to try to find the first previous sibling tag that matches the name passed to `tagName`.
 
+<br>
+
+`findFirstPreviousSiblingTag` receives two arguments:
+
+- `tagElement`: the __HTML tag__ that will be the search's starting point;
+- `tagName`: the name of the tag that is meant to be found among the preceding sibling tags.
+
+<br>
+
+`findFirstPreviousSiblingTag` returns:
+
+- an __HTML tag__ with the same name as `tagName`;
+- `null`, if a matching tag is not found.
 
 ---
 
 <br>
 
-### 3) `findFirstPreviousTag`
+### 3) [`findFirstPreviousTag( tagElement, tagName, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
 
 <br>
 
+`findFirstPreviousTag` calls `findFirstPreviousSiblingTag` several times to broaden the search by calling the `parentNode` method to also look into the previous sibling tags of the parent tag of `tagElement`.
 
+<br>
+
+`findFirstPreviousSiblingTag` receives three arguments:
+
+- `tagElement`: the __HTML tag__ that will be the search's starting point;
+- `tagName`: the __HTML tag__ that is meant to be found among the preceding sibling tags;
+- `levelsUp`: a number that indicates how many levels up the search can reach (_or how many times_ `parentNode` _method can be called_).
+
+<br>
+
+`findFirstPreviousTag` returns:
+
+- an __HTML tag__ with the same name as `tagName`;
+- `null`, if a matching tag is not found.
 
 ---
 
 <br>
 
-### 4) `findFirstNextSiblingTag`
+### 4) [`findFirstNextSiblingTag( tagElement, tagName )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
 
 <br>
 
+`findFirstNextSiblingTag` calls `getOrderedSiblingTags` with `'next'` as second argument to try to find the first next sibling tag that matches the name passed to `tagName`.
 
+<br>
+
+`findFirstNextSiblingTag` receives two arguments:
+
+- `tagElement`: the __HTML tag__ that will be the search's starting point;
+- `tagName`: the name of tag that is meant to be found among the following sibling tags.
+
+<br>
+
+`findFirstNextSiblingTag` returns:
+
+- an __HTML tag__ with the same name as `tagName`;
+- `null`, if a matching tag is not found.
 
 ---
 
 <br>
 
-### 5) `findFirstNextTag`
+### 5) [`findFirstNextTag( tagElement, tagName, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
 
 <br>
+
+`findFirstNextTag` calls `findFirstNextSiblingTag` several times to broaden the search by calling the `parentNode` method to also look into the previous sibling tags of the parent tag of `tagElement`.
+
+<br>
+
+`findFirstNextTag` receives three arguments:
+
+- `tagElement`: the __HTML tag__ that will the be search's starting point;
+- `tagName`: the __HTML tag__ that is meant to be found among the following sibling tags;
+- `levelsUp`: a number that indicates how many levels up the search will go (_or how many times_ `parentNode` _method can be called_).
+
+<br>
+
+`findFirstNextTag` returns:
+
+- an __HTML tag__ with the same name as `tagName`;
+- `null`, if a matching tag is not found.
+
+---
+
+<br><br>
+
+## Query tags using CSS selectors instead of tag names
+
+<br>
+
+Functions  `findFirstPreviousTagByCssSelector`, `findFirstPreviousSiblingTagByCssSelector`, `findFirstNextTagByCssSelector` and `findFirstNextSiblingTagByCssSelector` work the same way as `findFirstPreviousTag`, `findFirstPreviousSiblingTag`, `findFirstNextTag` and `findFirstNextSiblingTag`, respectively, but they allow the use of CSS selectors instead of tag names, enabling them to identify whatever is possible to write in a CSS selector:
+
+<br>
+
+### 6) [`findFirstPreviousSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+
+<br>
+
+---
+
+<br>
+
+### 7) [`findFirstPreviousTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+
+<br>
+
+---
+
+<br>
+
+### 8) [`findFirstNextSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+
+<br>
+
+---
+
+<br>
+
+### 9) [`findFirstNextTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
