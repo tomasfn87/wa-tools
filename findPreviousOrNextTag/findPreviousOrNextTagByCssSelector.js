@@ -13,6 +13,7 @@ export const findFirstPreviousTagByCssSelector = (tagElement, cssSelector, level
             }
             c++
         }
+        return null
     } else {
         return findFirstPreviousSiblingTagByCssSelector(tagElement, cssSelector)
     }
@@ -27,6 +28,7 @@ export const findFirstPreviousSiblingTagByCssSelector = (tagElement, cssSelector
             }
         }
     }
+    return null
 }
 
 export const findFirstNextTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
@@ -42,6 +44,7 @@ export const findFirstNextTagByCssSelector = (tagElement, cssSelector, levelsUp)
             }
             c++
         }
+        return null
     } else {
         return findFirstNextSiblingTag(tagElement, cssSelector)
     }
@@ -56,4 +59,5 @@ export const findFirstNextSiblingTagByCssSelector = (tagElement, cssSelector) =>
             }
         }
     }
+    return null
 }

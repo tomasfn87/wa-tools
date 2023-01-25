@@ -13,6 +13,7 @@ export const findFirstPreviousTag = (tagElement, tagName, levelsUp) => {
             }
             c++
         }
+        return null
     } else {
         return findFirstPreviousSiblingTag(tagElement, tagName)
     }
@@ -27,6 +28,7 @@ export const findFirstPreviousSiblingTag = (tagElement, tagName) => {
             }
         }
     }
+    return null
 }
 
 export const findFirstNextTag = (tagElement, tagName, levelsUp) => {
@@ -42,6 +44,7 @@ export const findFirstNextTag = (tagElement, tagName, levelsUp) => {
             }
             c++
         }
+        return null
     } else {
         return findFirstNextSiblingTag(tagElement, tagName)
     }
@@ -56,4 +59,5 @@ export const findFirstNextSiblingTag = (tagElement, tagName) => {
             }
         }
     }
+    return null
 }
