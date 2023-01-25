@@ -92,7 +92,7 @@ function () { return true; }
 
 ### _Step 1_)
 
-- The first step is to convert your > `ES5` `JavaScript` file using some transpiler. I use tsc (TypeScript compiler), passing the flag --allowJs to enable support for non TypeScript files.
+- The first step is to convert your > `ES5` `JavaScript` file using some transpiler. I use `tsc` (TypeScript compiler), passing the flag `--allowJs` to enable support for non TypeScript files.
 
 <br>
 

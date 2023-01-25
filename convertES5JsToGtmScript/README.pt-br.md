@@ -92,7 +92,7 @@ function () { return true; }
 
 ### _Passo 1_)
 
-- O primeiro passo é converter seu arquivo `JavaScript` > ES5 usando algum transpilador. Eu uso o tsc (TypeScript compiler - compilador TypeScript), passando a opção --allowJs para habilitar suporte a arquivos que não sejam TypeScript.
+- O primeiro passo é converter seu arquivo `JavaScript` > ES5 usando algum transpilador. Eu uso o `tsc` (TypeScript compiler - compilador TypeScript), passando a opção `--allowJs` para habilitar suporte a arquivos que não sejam TypeScript.
 
 <br>
 
