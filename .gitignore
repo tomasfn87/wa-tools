@@ -109,5 +109,8 @@ dist
 # VsCode
 *.vscode*
 
-# asdf folder
+# asdf
 .tool-versions
+
+# VIM swap files
+*.swp
