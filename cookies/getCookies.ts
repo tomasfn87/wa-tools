@@ -1,9 +1,5 @@
 const colors = require('colors/safe')
 
-/* 1) Load function getCookiesAsObjArr and then run the command below on the browser console:
-getCookiesAsObjArr(document.URL, document.cookie. 'decode')
-*/
-
 interface CookieObjArray {
   URL: string,
   cookies: CookieObj[]
@@ -18,18 +14,18 @@ type Process = 'none' | 'decode'
 
 const getCookiesAsObjArr:Function = (
   URL:string,
-  cookie_str:NavigatorCookies,
+  cookie_str:string,
   process:Process = 'none'
-):CookieObjArray => {
+):CookieObjArray|null => {
+  if (cookie_str == '') {
+    return null
+  }
   const regex_url:RegExp = /(https?:\/\/)(www.)?(.+)\/?/
   URL = URL.replace(regex_url, "$3")
-
   const regex_full_cookie:RegExp = /([^=]+)=[^=](\S+);?\s?/g
-  const cookies:RegExpMatchArray|null = String(cookie_str).match(regex_full_cookie)
-
+  const cookies:RegExpMatchArray|null = cookie_str.match(regex_full_cookie)
   const regex_key_value:RegExp = /^([^=]+)=(\S+)(;\s)?$/
   const cookiesAsObjArr:CookieObjArray = { URL: URL, cookies: [] }
-
   !!cookies && cookies.forEach(element => {
     cookiesAsObjArr.cookies.push({
       key: element.replace(regex_key_value, "$1"),
@@ -41,29 +37,35 @@ const getCookiesAsObjArr:Function = (
   })
   return cookiesAsObjArr
 }
-
-/* 2) Load function printCookieAndURL and then run the command below on the browser console:
-printCookieAndURL(document.URL, document.cookie, 1, 'decode')
+/* 1) Load function getCookiesAsObjArr and then run the command below on the browser console:
+getCookiesAsObjArr(document.URL, document.cookie. 'decode')
 */
 
 const printCookieAndURL:Function = (
   URL:string,
-  cookie_str: NavigatorCookies,
+  cookie_str: string,
   index:string|number = '-',
   decode:Process = 'none'
 ):void => {
   let data:CookieObjArray = getCookiesAsObjArr(URL, cookie_str, decode)
+  if (!data) {
+    console.log("ERROR: empty cookie.")
+    return
+  }
   console.log(`${index}) URL: ${data.URL}`)
   console.log(`${' '.repeat(String(index).length+2)}Cookies (${data.cookies.length}): {`)
   data.cookies.forEach((element, index) => {
     console.log(`     ${index+1}) ${element.key}: ${element.value.replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
-  console.log(`  }`)  
+  console.log(`  }`)
 }
+/* 2) Load function printCookieAndURL and then run the command below on the browser console:
+printCookieAndURL(document.URL, document.cookie, 1, 'decode')
+*/
 
 const printColoredCookieAndURL:Function = (
   URL:string,
-  cookie_str:NavigatorCookies,
+  cookie_str:string,
   index:string|number = '-',
   decode:Process = 'none'
 ):void => {
@@ -71,9 +73,9 @@ const printColoredCookieAndURL:Function = (
   console.log(`${colors.yellow(String(index))}) URL: ${colors.brightGreen(String(data.URL))}`)
   console.log(`${' '.repeat(String(index).length+2)}Cookies (${colors.yellow(String(data.cookies.length))}): {`)
   data.cookies.forEach((element, index) => {
-    console.log(`     ${colors.brightGreen(String(index + 1))}) ${colors.green(element.key)}: ${colors.cyan(String(element.value).replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& '))}${index < data.cookies.length - 1 ? ',' : ''}`)
+    console.log(`     ${colors.brightGreen(String(index + 1))}) ${colors.green(element.key)}: ${colors.cyan(element.value.replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& '))}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
-  console.log(`  }`)  
+  console.log(`  }`)
 }
 
 const cookiesAndURLs = [
@@ -114,4 +116,3 @@ cookiesAndURLs.forEach((element, index) => {
   printColoredCookieAndURL(element.URL, element.cookie, index+1, 'decode')
   index != cookiesAndURLs.length-1 && console.log()
 })
-

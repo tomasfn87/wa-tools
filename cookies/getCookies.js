@@ -1,19 +1,16 @@
 import colors from 'colors/safe.js'
 
-/* 1) Load function getCookiesAsObjArr and then run the command below on the browser console:
-getCookiesAsObjArr(document.URL, document.cookie. 'decode')
-*/
 
 const getCookiesAsObjArr = (URL, cookie_str, process = 'none') => {
+  if (cookie_str == '') {
+    return null
+  }
   const regex_url = /(https?:\/\/)(www.)?(.+)\/?/
   URL = URL.replace(regex_url, "$3")
-
   const regex_full_cookie = /([^=]+)=[^=](\S+);?\s?/g
   const cookies = cookie_str.match(regex_full_cookie)
-
   const regex_key_value = /^([^=]+)=(\S+)(;\s)?$/
   const cookiesAsObjArr = { URL: URL, cookies: [] }
-
   cookies.forEach(element => {
     cookiesAsObjArr.cookies.push({
       key: element.replace(regex_key_value, "$1"),
@@ -25,29 +22,39 @@ const getCookiesAsObjArr = (URL, cookie_str, process = 'none') => {
   })
   return cookiesAsObjArr
 }
-
-/* 2) Load function printCookieAndURL and then run the command below on the browser console:
-printCookieAndURL(document.URL, document.cookie, 1, 'decode')
+/* 1) Load function getCookiesAsObjArr and then run the command below on the browser console:
+getCookiesAsObjArr(document.URL, document.cookie. 'decode')
 */
 
 const printCookieAndURL = (URL, cookie, index='-', decode='none') => {
   let data = getCookiesAsObjArr(URL = URL, cookie = cookie, process = decode)
+  if (!data) {
+    console.log("ERROR: empty cookie.")
+    return
+  }
   console.log(`${index}) URL: ${data.URL}`)
   console.log(`${' '.repeat(String(index).length+2)}Cookies (${data.cookies.length}): {`)
   data.cookies.forEach((element, index) => {
     console.log(`     ${index+1}) ${element.key}: ${element.value.replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& ')}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
-  console.log(`  }`)  
+  console.log(`  }`)
 }
+/* 2) Load function printCookieAndURL and then run the command below on the browser console:
+printCookieAndURL(document.URL, document.cookie, 1, 'decode')
+*/
 
 const printColoredCookieAndURL = (URL, cookie, index='-', decode='none') => {
   let data = getCookiesAsObjArr(URL = URL, cookie = cookie, process = decode)
+  if (!data) {
+    console.log("ERROR: empty cookie.")
+    return
+  }
   console.log(`${colors.yellow(String(index))}) URL: ${colors.brightGreen(String(data.URL))}`)
   console.log(`${' '.repeat(String(index).length+2)}Cookies (${colors.yellow(String(data.cookies.length))}): {`)
   data.cookies.forEach((element, index) => {
     console.log(`     ${colors.brightGreen(String(index + 1))}) ${colors.green(element.key)}: ${colors.cyan(String(element.value).replaceAll(/&/g, '\n' + ' '.repeat(String(index).length+7) + ' '.repeat(element.key.length) + '& '))}${index < data.cookies.length - 1 ? ',' : ''}`)
   })
-  console.log(`  }`)  
+  console.log(`  }`)
 }
 
 const cookiesAndURLs = [
@@ -88,4 +95,3 @@ cookiesAndURLs.forEach((element, index) => {
   printColoredCookieAndURL(element.URL, element.cookie, index+1, 'decode')
   index != cookiesAndURLs.length-1 && console.log()
 })
-
