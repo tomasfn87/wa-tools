@@ -6,6 +6,29 @@
 
 ---
 
+<br>
+
+## Download only this project from [`wa-tools`](https://github.com/tomasfn87/wa-tools)
+
+### Using `git` CLI
+
+```shell
+git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./youTubeUrlShortener && cd youTubeUrlShortener && git sparse-checkout set youTubeUrlShortener && git checkout && mv youTubeUrlShortener/* . && rm -rf {youTubeUrlShortener,.git}
+```
+
+---
+
+### Using a web browser
+
+1. Go to [Download GitHub Directory](https://download-directory.github.io)
+2. Paste the URL below in the input field and press `Enter` to download only this folder instead of the whole `wa-tools` repository
+
+```uri
+https://github.com/tomasfn87/wa-tools/tree/main/youTubeUrlShortener
+```
+
+---
+
 ## *Examples*
 
 > The comments represent the results.
