@@ -2,6 +2,33 @@
 
 <br>
 
+## Download only this project from [`wa-tools`](https://github.com/tomasfn87/wa-tools)
+
+<br>
+
+### Using `git` CLI
+
+```shell
+git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./findPreviousOrNextTag && cd findPreviousOrNextTag && git sparse-checkout set findPreviousOrNextTag && git checkout && mv findPreviousOrNextTag/* . && rm -rf {findPreviousOrNextTag,.git}
+```
+
+---
+
+<br>
+
+### Using a web browser
+
+1. Go to [Download GitHub Directory](https://download-directory.github.io)
+2. Paste the URL below in the input field and press `Enter` to download only this folder instead of the whole `wa-tools` repository
+
+```uri
+https://github.com/tomasfn87/wa-tools/tree/main/findPreviousOrNextTag
+```
+
+---
+
+<br>
+
 ## Application
 
 <br>
@@ -20,28 +47,28 @@ You cannot use the `parentNode` or `parentElement` JavaScript method, because th
 
 *__The elements are clearly grouped; they're wrapped by different mother tags, that allow a__* `querySelector` *__method to do the job.__*
 
-__Example__ - each group is wrapped in a `<div>`: you have to access the closest `<h1>` content from a click on one of the `<a>` tags:
+__Example__ - each group is wrapped in a `<div>`: you have to access the closest `<h3>` content from a click on one of the `<a>` tags:
 
 ```html
 <div>
-  <h1>Title 1</h1>
+  <h3>Title 1</h3>
   <p><a href="#">Click here 1</a></p>
 </div>
 <div>
-  <h1>Title 2</h1>
+  <h3>Title 2</h3>
   <p><a href="#">Click here 2</a></p>
 </div>
 <div>
-  <h1>Title 3</h1>
+  <h3>Title 3</h3>
   <p><a href="#">Click here 3</a></p>
 </div>
 ```
 
-You want your tag to tell the user __"this click is under this title"__ (_the closest_ `<h1>`'s _content, upwards_). So, a click on `Click here 1` would be related to `Title 1`, a click on `Click here 2` to `Title 2`, and so on.
+You want your tag to tell the user __"this click is under this title"__ (_the closest_ `<h3>`'s _content, upwards_). So, a click on `Click here 1` would be related to `Title 1`, a click on `Click here 2` to `Title 2`, and so on.
 
 <br>
 
-The code below is a [Google Tag Manager](https://tagmanager.google.com) custom JavaScript variable that is doing the job described above: it will correlate a click on a `<a>` with the `<h1>`'s content under the same `<div>`:
+The code below is a [Google Tag Manager](https://tagmanager.google.com) custom JavaScript variable that is doing the job described above: it will correlate a click on a `<a>` with the `<h3>`'s content under the same `<div>`:
 
 <br>
 
@@ -49,11 +76,11 @@ Content of `myVariable`:
 
 ```javascript
 function () {
-  return {{Click Element}}.parentNode.parentNode.querySelector('h1').innerText;
+  return {{Click Element}}.parentNode.parentNode.querySelector('h3').innerText;
 }
 ```
 
-*__The way to follow is clear here__*: you just have to go up two elements and then use the `querySelector` method: the first `parentNode` will point to the `<p>` tag; the second `parentNode` will point to the `<div>` tag and then the `querySelector('h1')` will point to the first `<h1>` tag.
+*__The way to follow is clear here__*: you just have to go up two elements and then use the `querySelector` method: the first `parentNode` will point to the `<p>` tag; the second `parentNode` will point to the `<div>` tag and then the `querySelector('h3')` will point to the first `<h3>` tag.
 
 <br>
 
@@ -75,24 +102,24 @@ __Example__ - the groups are all inside a mother tag (`<div>`):
 
 ```html
 <div>
-  <h1>Title 1</h1>
+  <h3>Title 1</h3>
   <p><a href="#">Click here 1</a></p>
-  <h1>Title 2</h1>
+  <h3>Title 2</h3>
   <p><a href="#">Click here 2</a></p>
-  <h1>Title 3</h1>
+  <h3>Title 3</h3>
   <p><a href="#">Click here 3</a></p>
 </div>
 ```
 
-You need to reference a `<h1>` value from a click on one of the `<a>`, but, if you use the method described in 1), you will always get the first `<h1>`.
+You need to reference a `<h3>` value from a click on one of the `<a>`, but, if you use the method described in 1), you will always get the first `<h1>`.
 
 <br>
 
 You need that a click on `Click here 1` to return `Title 1`; a click on `Click here 2` to return `Title 2`, and so on.
 
-But, in this case, applying the `querySelector` method on the parent `<div>` wouldn't work: it would always return `Title 1`, because there's a single mother `<div>` wrapping all the `<h1>`/`<p>` pairs.
+But, in this case, applying the `querySelector` method on the parent `<div>` wouldn't work: it would always return `Title 1`, because there's a single mother `<div>` wrapping all the `<h3>`/`<p>` pairs.
 
-You want the closest `<h1>` sibling tag upwards, in this case.
+You want the closest `<h3>` sibling tag upwards, in this case.
 
 <br>
 
