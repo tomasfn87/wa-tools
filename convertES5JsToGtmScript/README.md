@@ -1,54 +1,63 @@
-# ConvertES5JsToGtmScript
+# convertES5JsToGtmScript
 
 <br>
 
-## _Convert ECMA Script 5 JavaScript to Google Tag Manager Script_
+_Convert ECMA Script 5 JavaScript to Google Tag Manager Script_
+
+<br>
+
+- `convertES5JsToGtmScript` is a tool to help converting __JavaScript__ to __Google Tag Manager Script__ (`gtmscript`).
 
 ---
 
-<br><br>
+<br>
 
-## Download the project itself and its dependencies
+## Installation (_download the project and install_ `TypeScript`)
 
 <br>
 
-### _Step 1_)
+### Project
 
-- Visit the website below:
+- To download only this project from [`wa-tools`](https://github.com/tomasfn87/wa-tools):
 
-[Download GitHub Directory](https://download-directory.github.io)
+#### Using `git` CLI
 
-<br>
+```shell
+git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./convertES5JsToGtmScript && cd convertES5JsToGtmScript && git sparse-checkout set convertES5JsToGtmScript && git checkout && mv convertES5JsToGtmScript/* . && rm -rf {convertES5JsToGtmScript,.git}
+```
 
-### _Step 2_)
+---
 
-- Paste this URL in the input field and press Enter to download only this folder instead of the whole `wa-tools` repository:
+#### Using a web browser
+
+1. Go to [Download GitHub Directory](https://download-directory.github.io)
+2. Paste the URL below in the input field and press `Enter` to download only this folder instead of the whole `wa-tools` repository:
 
 ```uri
 https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript
 ```
 
+---
+
 <br>
 
-### _Step 3_)
+### Dependencies
 
-- Access the folder and run the command above to install the project's dependencies (`Node.js`/`npm` must be installed):
+<br>
 
 ```shell
 npm install
 ```
 
-_or_
-
-```shell
-npm i
-```
+---
 
 <br>
 
-### _Step 4_)
+### TypeScript
 
-- Install TypeScript libraries globally on your machine to use it as your transpiler (you could also use Babel):
+<br>
+
+- Install `TypeScript` libraries globally on your machine to use it as your transpiler (you could also use Babel):
 
 ```shell
 sudo npm i -g typescript tsc ts-node
@@ -92,13 +101,14 @@ function () { return true; }
 
 ### _Step 1_)
 
-- The first step is to convert your > `ES5` `JavaScript` file using some transpiler. I use `tsc` (TypeScript compiler), passing the flag `--allowJs` to enable support for non TypeScript files.
+- The first step is to convert your `JavaScript` file in a version superior to `ES5` using some transpiler;
+- I use `tsc` (*__TypeScript__* _compiler_), passing the flag `--allowJs` to enable support for non-TypeScript files.
 
 <br>
 
-__Example - Step 1)__:
+*__Example__* _- Step 1)_:
 
-- create a folder named '`es5`' and generate an `ES5` file from any version of `JavaScript` supported by the transpiler:
+- create a folder named `es5` and generate an `ES5` file from any version of `JavaScript` supported by the transpiler:
 
 <br>
 
@@ -120,7 +130,7 @@ I personally use this script to write shorter code, mainly by using _arrow funct
 
 <br>
 
-__Example__ - function expression:
+*__Example__* - function expression:
 
 <br>
 
@@ -134,7 +144,7 @@ When creating a custom `JavaScript` variable in [Google Tag Manager](https://tag
 
 <br>
 
-__Example__ - custom `JavaScript` variable ([Google Tag Manager](https://tagmanager.google.com)):<br>
+*__Example__* - custom `JavaScript` variable ([Google Tag Manager](https://tagmanager.google.com)):<br>
 
 ```javascript
 function() { return true; }
@@ -185,7 +195,7 @@ And having to delete things is fine for a single file, but when you need to conv
 
 A second problem handled by this script is how to reference other [Google Tag Manager](https://tagmanager.google.com) variables (native or customized), since the code below is also unvalid `JavaScript` code:
 
-__Example__ - [Google Tag Manager](https://tagmanager.google.com) variable reference:
+*__Example__* - [Google Tag Manager](https://tagmanager.google.com) variable reference:
 
 <br>
 
@@ -195,11 +205,11 @@ __Example__ - [Google Tag Manager](https://tagmanager.google.com) variable refer
 
 <br><br>
 
-The code above would generate an error when running tsc. I found out that a nice workaround is to wrap these variable into single ou double quotes, as in the examples below. This script will make sure these single or double quotes disappear - they will only allow the transpiler to work correctly.
+The code above would generate an error when running `tsc`. I found out that a nice workaround is to wrap these variable into single (`''`) or double quotes (`""`), as in the examples below. This script will make sure these single or double quotes disappear - they will only allow the transpiler to work correctly (_Step 1_).
 
 <br>
 
-__Example__ - [Google Tag Manager](https://tagmanager.google.com) variable reference workaround, producing valid `JavaScript`:
+*__Example__* - [Google Tag Manager](https://tagmanager.google.com) variable reference workaround, producing valid `JavaScript`:
 
 ```javascript
 '{{myVariable}}'
@@ -213,7 +223,7 @@ _or_
 
 <br>
 
-#### _Example - Step 2)_:
+#### *__Example__* _- Step 2)_:
 
 - running the script and getting a `GtmScript` file:<br>
 
@@ -231,4 +241,4 @@ es5/example.gtm.js
 
 <br><br>
 
-This `.gtm.js` file content is ready to copied and pasted into a custom `JavaScript` variable in [Google Tag Manager](https://tagmanager.google.com). It's not valid `JavaScript`, but it's valid `GtmScript`, and this is what __Web Analysts__ need. This way you can edit your codes with _arrow functions_ and modern syntax locally, and, when the moment to upload the code to [Google Tag Manager](https://tagmanager.google.com), use `tsc` and this script to obtain the code in `GtmScript`.
+This `.gtm.js` file content is ready to copied and pasted into a custom `JavaScript` variable in [Google Tag Manager](https://tagmanager.google.com). It's not valid `JavaScript`, but it's valid `GtmScript`, and this is what __Web Analysts__ need. This way you can edit your codes with _arrow functions_ and modern syntax locally, and, when the moment to upload the code to [Google Tag Manager](https://tagmanager.google.com) comes, use `tsc` and this script to obtain the code in `GtmScript`.

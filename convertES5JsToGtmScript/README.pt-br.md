@@ -1,52 +1,61 @@
-# ConvertES5JsToGtmScript
+# convertES5JsToGtmScript
 
 <br>
 
-## _Converter JavaScript ECMA Script 5 para Script do Google Tag Manager_
+_Converter JavaScript ECMA Script 5 para Script do Google Tag Manager_
+
+<br>
+
+- `convertES5JsToGtmScript` é uma ferramenta que ajuda a converter __JavaScript__ para __Google Tag Manager Script__ (`gtmscript`).
 
 ---
 
-<br><br>
+<br>
 
-## Baixar o projeto em si e suas dependências
+## Instalação (_baixar o projeto e instalar_ `TypeScript`)
 
 <br>
 
-### _Passo 1_)
+### Projeto
 
-- Entre no website abaixo:
+- Para baixar apenas esse projeto de [`wa-tools`](https://github.com/tomasfn87/wa-tools):
 
-[Download GitHub Directory](https://download-directory.github.io)
+### Usando CLI `git`
 
-<br>
+```shell
+git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./convertES5JsToGtmScript && cd convertES5JsToGtmScript && git sparse-checkout set convertES5JsToGtmScript && git checkout && mv convertES5JsToGtmScript/* . && rm -rf {convertES5JsToGtmScript,.git}
+```
 
-### _Passo 2_)
+---
 
-- Cole essa URL no campo de entrada e aperte Enter para baixar apenas essa pasta ao invés de todo o repositório `wa-tools`:
+### Usando um navegador (_browser_)
+
+1. Va até [Download GitHub Directory](https://download-directory.github.io)
+2. Cole a URL abaixo no campo de entrada e aperter `Enter` para baixar apenas essa pasta ao invés de todo o repositório `wa-tools`:
 
 ```uri
 https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript
 ```
 
+---
+
 <br>
 
-### _Passo 3_)
+## Dependências
 
-- Acesse a pasta e rode o comando abaixo para instalar as dependências do projeto (`Node.js`/`npm` devem estar instalados):
+<br>
 
 ```shell
 npm install
 ```
 
-_ou_
-
-```shell
-npm i
-```
+---
 
 <br>
 
-### _Passo 4_)
+## TypeScript
+
+<br>
 
 - Instale as bibliotecas do `TypeScript` globalmente na sua máquina para usar como o seu transpilador (você também pode usar `Babel`):
 
@@ -92,7 +101,8 @@ function () { return true; }
 
 ### _Passo 1_)
 
-- O primeiro passo é converter seu arquivo `JavaScript` > ES5 usando algum transpilador. Eu uso o `tsc` (TypeScript compiler - compilador TypeScript), passando a opção `--allowJs` para habilitar suporte a arquivos que não sejam TypeScript.
+- O primeiro passo é converter seu arquivo `JavaScript` de uma versão superior à `ES5` usando algum transpilador;
+- Eu uso o `tsc` (*__TypeScript__* _compiler_), passando a opção `--allowJs` para habilitar suporte a arquivos que não sejam TypeScript.
 
 <br>
 
@@ -120,7 +130,7 @@ Pessoalmente eu uso esse script para escrever menos código, principalmente usan
 
 <br>
 
-__Exemplo__ - expressão de função:
+*__Exemplo__* - expressão de função:
 
 <br>
 
@@ -134,7 +144,7 @@ Ao criar uma variável `JavaScript` no [Google Tag Manager](https://tagmanager.g
 
 <br>
 
-__Exemplo__ - variável `JavaScript` personalizada ([Google Tag Manager](https://tagmanager.google.com)):
+*__Exemplo__* - variável `JavaScript` personalizada ([Google Tag Manager](https://tagmanager.google.com)):
 
 ```javascript
 function() { return true; }
@@ -185,7 +195,7 @@ E tudo bem ter que deletar algumas coisas em um único arquivo, mas quando você
 
 Um segundo problema lidado por esse script é como referenciar outras variáveis do [Google Tag Manager](https://tagmanager.google.com) (nativas ou personalizadas), já que o código abaixo também é um código `JavaScript` inválido:
 
-__Exemplo__ - referência a uma variável do [Google Tag Manager](https://tagmanager.google.com):
+*__Exemplo__* - referência a uma variável do [Google Tag Manager](https://tagmanager.google.com):
 
 <br>
 
@@ -195,11 +205,11 @@ __Exemplo__ - referência a uma variável do [Google Tag Manager](https://tagman
 
 <br><br>
 
-O código acima iria gerar um erro ao rodar o `tsc`. Descobri que uma maneira de contornar esse problema é envolver essas variáveis em aspas simples ou duplas, como nos exemplos abaixo. Esse script se assegurará que as aspas desapareçam - elas apenas irão servir para permitir que o transpilador trabalhe corretamente.
+O código acima iria gerar um erro ao rodar o `tsc`. Descobri que uma maneira de contornar esse problema é envolver essas variáveis em aspas simples (`''`) ou duplas (`""`), como nos exemplos abaixo. Esse script se assegurará que as aspas desapareçam - elas apenas irão servir para permitir que o transpilador trabalhe corretamente (_Passo 1_).
 
 <br>
 
-__Exemplo__ - como fazer referência a uma varíavel [Google Tag Manager](https://tagmanager.google.com) com uma sintaxe válida em `JavaScript`:
+*__Exemplo__* - como fazer referência a uma varíavel [Google Tag Manager](https://tagmanager.google.com) com uma sintaxe válida em `JavaScript`:
 
 ```javascript
 '{{minhaVariavel}}'
@@ -213,7 +223,7 @@ _ou_
 
 <br><br>
 
-#### _Exemplo - Passo 2)_
+#### *__Exemplo__* _- Passo 2)_
 
 - rodando o script e obtendo um arquivo em `GtmScript`:
 
