@@ -208,7 +208,7 @@ It takes as its first argument an __HTML tag__, and, as its second optional argu
 `findFirstPreviousSiblingTag` receives three arguments:
 
 - `tagElement`: the __HTML tag__ that will be the search's starting point;
-- `tagName`: the __HTML tag__ that is meant to be found among the preceding sibling tags;
+- `tagName`: the name of the __HTML tag__ that is meant to be found among the preceding sibling tags;
 - `levelsUp`: a number that indicates how many levels up the search can reach (_or how many times_ `parentNode` _method can be called_).
 
 <br>
@@ -233,7 +233,7 @@ It takes as its first argument an __HTML tag__, and, as its second optional argu
 `findFirstNextSiblingTag` receives two arguments:
 
 - `tagElement`: the __HTML tag__ that will be the search's starting point;
-- `tagName`: the name of tag that is meant to be found among the following sibling tags.
+- `tagName`: the name of the __HTML tag__ that is meant to be found among the following sibling tags.
 
 <br>
 
@@ -257,7 +257,7 @@ It takes as its first argument an __HTML tag__, and, as its second optional argu
 `findFirstNextTag` receives three arguments:
 
 - `tagElement`: the __HTML tag__ that will the be search's starting point;
-- `tagName`: the __HTML tag__ that is meant to be found among the following sibling tags;
+- `tagName`: the name of the __HTML tag__ that is meant to be found among the following sibling tags;
 - `levelsUp`: a number that indicates how many levels up the search will go (_or how many times_ `parentNode` _method can be called_).
 
 <br>
@@ -281,15 +281,11 @@ Functions  `findFirstPreviousTagByCssSelector`, `findFirstPreviousSiblingTagByCs
 
 ### 6) [`findFirstPreviousSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
 
-<br>
-
 ---
 
 <br>
 
 ### 7) [`findFirstPreviousTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
-
-<br>
 
 ---
 
@@ -297,10 +293,22 @@ Functions  `findFirstPreviousTagByCssSelector`, `findFirstPreviousSiblingTagByCs
 
 ### 8) [`findFirstNextSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
 
-<br>
-
 ---
 
 <br>
 
 ### 9) [`findFirstNextTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+
+---
+
+<br><br>
+
+## Example
+
+<br>
+
+```javascript
+const myProductButton = document.querySelectorAll('button.add-item')[2];
+const myProductTitleTag = findFirstPreviousTagByCssSelector(myProductButton, 'h4.cart-item-title', 5);
+const myProductTitle = myProductTitleTag.innerText;
+```

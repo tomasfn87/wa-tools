@@ -184,7 +184,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 `findFirstPreviousSiblingTag` recebe dois argumentos:
 
 - `tagElement`: a __tag HTML__ que será o ponto de partida da busca;
-- `tagName`: o nome da tag que deve ser encontrada entre as tag irmãs anteriores.
+- `tagName`: o nome da __tag HTML__ que deve ser encontrada entre as tag irmãs anteriores.
 
 <br>
 
@@ -233,7 +233,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 `findFirstNextSiblingTag` recebe dois argumentos:
 
 - `tagElement`: a __tag HTML__ que será o ponto de partida da busca;
-- `tagName`: o nome da tag que deve ser encontrada entre as tag irmãs seguintes.
+- `tagName`: o nome da __tag HTML__ que deve ser encontrada entre as tag irmãs seguintes.
 
 <br>
 
@@ -281,15 +281,11 @@ As funções `findFirstPreviousTagByCssSelector`, `findFirstPreviousSiblingTagBy
 
 ### 6) [`findFirstPreviousSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
 
-<br>
-
 ---
 
 <br>
 
 ### 7) [`findFirstPreviousTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
-
-<br>
 
 ---
 
@@ -297,10 +293,22 @@ As funções `findFirstPreviousTagByCssSelector`, `findFirstPreviousSiblingTagBy
 
 ### 8) [`findFirstNextSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
 
-<br>
-
 ---
 
 <br>
 
 ### 9) [`findFirstNextTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+
+---
+
+<br><br>
+
+## Exemplo
+
+<br>
+
+```javascript
+const botaoMeuProduto = document.querySelectorAll('button.add-item')[2];
+const tagTituloMeuProduto = findFirstPreviousTagByCssSelector(botaoMeuProduto, 'h4.cart-item-title', 5);
+const tituloMeuProduto = tagTituloMeuProduto.innerText;
+```
