@@ -1,8 +1,8 @@
 const youTubeUrlShortener = (ytUrl) => {
+    if (!ytUrl) return "";
     const reYouTubeUrl = /(https?:\/\/)?(www\.)?((m\.)?youtube.com|youtu.be)\/(o?embed\/|watch\?v=)?([0-9A-Za-z_-]{10}[048AEIMQUYcgkosw])([\?&]\S*)*/;
     const reYouTubeVideoID = /[0-9A-Za-z_-]{10}[048AEIMQUYcgkosw]/;
     let video_id;
-
     if (reYouTubeUrl.test(ytUrl)) {
         video_id = ytUrl.replace(reYouTubeUrl, '$6');
     }

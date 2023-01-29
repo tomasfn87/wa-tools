@@ -16,7 +16,8 @@ const tests = [
     { value: "https://www.youtu.be/I845O57ZSy4", result: r },
     { value: "youtube.com/watch?v=I845O57ZSy4", result: r },
     { value: "https://youtu.be/I845O57ZSy4", result: r },
-    { value: r, result: r }
+    { value: r, result: r },
+    { value: '', result: '' }
 ];
 
 [
