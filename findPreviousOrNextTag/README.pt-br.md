@@ -2,11 +2,34 @@
 
 <br>
 
-## Baixar apenas esse projeto de [`wa-tools`](https://github.com/tomasfn87/wa-tools)
+## Índice
+
+- [Baixar essa pasta](#download)
+  - [`git` CLI](#download-git)
+  - [Navegador](#download-browser)
+- [Aplicação](#application)
+  - [1. Quando não usar](#application-no)
+  - [2. Quando usar](#application-yes)
+- [Descrição de função](#function-description)
+  - [1. getOrderedSiblingTags](#get-ordered-sibling-tags) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/getOrderedSiblingTags.js#L1))
+  - [2. findFirstPreviousSiblingTag](#find-first-previous-sibling-tag) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js#L22))
+  - [3. findFirstPreviousTag](#find-first-previous-tag) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js#L3))
+  - [4. findFirstNextSiblingTag](#find-first-next-sibling-tag) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js#L53))
+  - [5. findFirstNextTag](#find-first-next-tag) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js#L34))
+- [Requisitar tags usando seletores CSS ao invés de nomes de tags](#query-using-css)
+  - [6. findFirstPreviousSiblingTagByCssSelector](#find-first-previous-sibling-tag-by-css-selector) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js#L22))
+  - [7. findFirstPreviousTagByCssSelector](#find-first-previous-tag-by-css-selector) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js#L3))
+  - [8. findFirstNextSiblingTagByCssSelector](#find-first-next-sibling-tag-by-css-selector) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js#L53))
+  - [9. findFirstNextTagByCssSelector](#find-first-next-tag-by-css-selector) ([`código`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js#L34))
+- [Exemplo](#example)
 
 <br>
 
-### Usando CLI `git`
+## <span id="download">Baixar apenas esse projeto de [`wa-tools`](https://github.com/tomasfn87/wa-tools)</span>
+
+<br>
+
+### <span id="download-git">Usando CLI `git`</span>
 
 ```shell
 git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./findPreviousOrNextTag && cd findPreviousOrNextTag && git sparse-checkout set findPreviousOrNextTag && git checkout && mv findPreviousOrNextTag/* . && rm -rf {findPreviousOrNextTag,.git}
@@ -16,7 +39,7 @@ git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./findPr
 
 <br>
 
-### Usando um navegador (_browser_)
+### <span id="download-browser">Usando um navegador (_browser_)</span>
 
 1. Va até [Download GitHub Directory](https://download-directory.github.io)
 2. Cole a URL abaixo no campo de entrada e aperter `Enter` para baixar apenas essa pasta ao invés de todo o repositório `wa-tools`:
@@ -29,7 +52,7 @@ https://github.com/tomasfn87/wa-tools/tree/main/findPreviousOrNextTag
 
 <br>
 
-## Aplicação
+## <span id="application">Aplicação</span>
 
 <br>
 
@@ -41,7 +64,7 @@ Você não pode usar os métodos JavaScript `parentNode` nem `parentElement`, po
 
 <br><br>
 
-### 1) Quando não usar
+### <span id="application-no">1) Quando não usar</span>
 
 <br>
 
@@ -92,7 +115,7 @@ Existe um conjunto de variáveis nativas disponíveis. `{{Click Element}}` é um
 
 <br><br>
 
-### 2) Quando usar
+### 2) <span id="application-yes">Quando usar</span>
 
 <br>
 
@@ -129,11 +152,11 @@ E aí que esse projeto torna-se útil: você precisa navegar pelas tags irmãs, 
 
 <br><br>
 
-## Descrição de função
+## <span id="function-description">Descrição de função</span>
 
 <br>
 
-### 1) [`getOrderedSiblingTags( tagElement, s = 'both')`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/getOrderedSiblingTags.js)
+### <span id="get-ordered-sibling-tags">1) [`getOrderedSiblingTags( tagElement, s = 'both')`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/getOrderedSiblingTags.js)</span>
 
 <br>
 
@@ -173,7 +196,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 
 <br>
 
-### 2) [`findFirstPreviousSiblingTag( tagElement, tagName )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
+### 2) <span id="find-first-previous-sibling-tag">[`findFirstPreviousSiblingTag( tagElement, tagName )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)</span>
 
 <br>
 
@@ -197,7 +220,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 
 <br>
 
-### 3) [`findFirstPreviousTag( tagElement, tagName, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
+### <span id="find-first-previous-tag">3) [`findFirstPreviousTag( tagElement, tagName, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)</span>
 
 <br>
 
@@ -222,7 +245,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 
 <br>
 
-### 4) [`findFirstNextSiblingTag( tagElement, tagName )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
+### 4) [`findFirstNextSiblingTag( tagElement, tagName )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)</span>
 
 <br>
 
@@ -246,7 +269,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 
 <br>
 
-### 5) [`findFirstNextTag( tagElement, tagName, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)
+### 5) [`findFirstNextTag( tagElement, tagName, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTag.js)</span>
 
 <br>
 
@@ -271,7 +294,7 @@ Ela recebe como primeiro argumento uma __tag HTML__, e, como seu segundo argumen
 
 <br><br>
 
-## Requisitar tags usando seletores CSS ao invés de nomes de tags
+## <span id="query-using-css">Requisitar tags usando seletores CSS ao invés de nomes de tags</span>
 
 <br>
 
@@ -279,31 +302,31 @@ As funções `findFirstPreviousTagByCssSelector`, `findFirstPreviousSiblingTagBy
 
 <br>
 
-### 6) [`findFirstPreviousSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+### <span id="find-first-previous-sibling-tag-by-css-selector">6) [`findFirstPreviousSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)</span>
 
 ---
 
 <br>
 
-### 7) [`findFirstPreviousTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+### <span id="find-first-previous-tag-by-css-selector">7) [`findFirstPreviousTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)</span>
 
 ---
 
 <br>
 
-### 8) [`findFirstNextSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+### <span id="find-first-next-sibling-tag-by-css-selector">8) [`findFirstNextSiblingTagByCssSelector( tagElement, cssSelector )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)</span>
 
 ---
 
 <br>
 
-### 9) [`findFirstNextTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)
+### <span id="find-first-next-tag-by-css-selector">9) [`findFirstNextTagByCssSelector( tagElement, cssSelector, levelsUp )`](https://github.com/tomasfn87/wa-tools/blob/main/findPreviousOrNextTag/findPreviousOrNextTagByCssSelector.js)</span>
 
 ---
 
 <br><br>
 
-## Exemplo
+## <span id="example">Exemplo</span>
 
 <br>
 
