@@ -1,8 +1,25 @@
-# convertES5JsToGtmScript
+ convertES5JsToGtmScript
 
 <br>
 
 _Converter JavaScript ECMA Script 5 para Script do Google Tag Manager_
+
+<br>
+
+## Índice
+
+- [Instalação](#install)
+  - [Projeto](#install-project)
+    - [`git` CLI](#install-project-git)
+    - [Navegador](#install-project-browser)
+  - [Dependências](#install-dependencies)
+  - [TypeScript](#install-typescript)
+- [Por quê esse script foi criado?](#why)
+- [Como converter `JavaScript` para `ES5` e então para `GtmScript`](#how-to)
+  - [Passo 1 (converter para `ES5` com `tsc`)](#how-to-step-1)
+    - [Exemplo](#how-to-step-1-example)
+  - [Passo 2 (formatar para `GtmScript` usando](#how-to-step-2) [esse `script`](https://github.com/tomasfn87/wa-tools/blob/main/convertES5JsToGtmScript/convert_es5_javascript_to_gtmscript.js#L9)
+    - [Exemplo](#how-to-step-2-example)
 
 <br>
 
@@ -12,15 +29,15 @@ _Converter JavaScript ECMA Script 5 para Script do Google Tag Manager_
 
 <br>
 
-## Instalação (_baixar o projeto e instalar_ `TypeScript`)
+## <span id="install">Instalação (_baixar o projeto e instalar_ `TypeScript`)</span>
 
 <br>
 
-### Projeto
+### <span id="install-project">Projeto</span>
 
 - Para baixar apenas esse projeto de [`wa-tools`](https://github.com/tomasfn87/wa-tools):
 
-### Usando CLI `git`
+### <span id="install-project-git">Usando CLI `git`</span>
 
 ```shell
 git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./convertES5JsToGtmScript && cd convertES5JsToGtmScript && git sparse-checkout set convertES5JsToGtmScript && git checkout && mv convertES5JsToGtmScript/* . && rm -rf {convertES5JsToGtmScript,.git}
@@ -28,7 +45,7 @@ git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./conver
 
 ---
 
-### Usando um navegador (_browser_)
+### <span id="install-project-browser">Usando um navegador (_browser_)</span>
 
 1. Va até [Download GitHub Directory](https://download-directory.github.io)
 2. Cole a URL abaixo no campo de entrada e aperter `Enter` para baixar apenas essa pasta ao invés de todo o repositório `wa-tools`:
@@ -41,7 +58,7 @@ https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript
 
 <br>
 
-## Dependências
+## <span id="install-dependencies">Dependências</span>
 
 <br>
 
@@ -53,7 +70,7 @@ npm install
 
 <br>
 
-## TypeScript
+## <span id="install-typescript">TypeScript</span>
 
 <br>
 
@@ -69,7 +86,7 @@ sudo npm i -g typescript tsc ts-node
 
 <br><br>
 
-## Por quê esse script foi criado?
+## <span id="why">Por quê esse script foi criado?</span>
 
 <br>
 
@@ -95,18 +112,18 @@ function () { return true; }
 
 <br><br>
 
-## Como converter `JavaScript` para `ES5` e então para `GtmScript`
+## <span id="how-to">Como converter `JavaScript` para `ES5` e então para `GtmScript`</span>
 
 <br>
 
-### _Passo 1_)
+### <span id="how-to-step-1">_Passo 1_)</span>
 
 - O primeiro passo é converter seu arquivo `JavaScript` de uma versão superior à `ES5` usando algum transpilador;
 - Eu uso o `tsc` (*__TypeScript__* _compiler_), passando a opção `--allowJs` para habilitar suporte a arquivos que não sejam TypeScript.
 
 <br>
 
-#### _Exemplo - Passo 1)_
+#### <span id="how-to-step-1-example">*__Exemplo__* - _Passo 1)_</span>
 
 - criar uma pasta de nome `es5` e gerar um arquivo `ES5` de qualquer versão do `JavaScript` suportada pelo transpilador:
 
@@ -124,7 +141,7 @@ Pessoalmente eu uso esse script para escrever menos código, principalmente usan
 
 <br><br>
 
-### _Passo 2_)
+### <span id="how-to-step-2">_Passo 2_)</span>
 
 - O segundo passo é usar esse script para remover uma expressão de função (function expression). Uma expressão de função é apenas uma função `JavaScript` entre parênteses:
 
@@ -223,9 +240,9 @@ _ou_
 
 <br><br>
 
-#### *__Exemplo__* _- Passo 2)_
+#### <span id="how-to-step-2-example">*__Exemplo__* - _Passo 2)_:</span>
 
-- rodando o script e obtendo um arquivo em `GtmScript`:
+- rodando o [script](https://github.com/tomasfn87/wa-tools/blob/main/convertES5JsToGtmScript/convert_es5_javascript_to_gtmscript.js#L9) e obtendo um arquivo em `GtmScript`:
 
 <br>
 
@@ -243,4 +260,4 @@ es5/exemplo.gtm.js
 
 <br><br>
 
-O conteúdo desse arquivo `.gtm.js` está pronto para ser copiado e colado em uma variável `JavaScript` personalizada no [Google Tag Manager](https://tagmanager.google.com). Não é `JavaScript` _válido_, mas é `GtmScript` __válido__, e é isso que que trabalha com __Web Analytics__ precisa. Desse modo você pode editar seus códigos com _arrow functions_ e sintaxe moderna localmente, e, quando for o momento de subir o código para o [Google Tag Manager](https://tagmanager.google.com), usar o `tsc` e esse script para obter o código em `GtmScript`.
+O conteúdo desse arquivo `.gtm.js` está pronto para ser copiado e colado em uma variável `JavaScript` personalizada no [Google Tag Manager](https://tagmanager.google.com). Não é `JavaScript` _válido_, mas é `GtmScript` __válido__, e é isso que quem trabalha com __Web Analytics__ precisa. Desse modo você pode editar seus códigos com _arrow functions_ e sintaxe moderna localmente, e, quando for o momento de subir o código para o [Google Tag Manager](https://tagmanager.google.com), usar o `tsc` e esse script para obter o código em `GtmScript`.

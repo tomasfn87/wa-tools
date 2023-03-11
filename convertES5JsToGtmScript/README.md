@@ -6,21 +6,38 @@ _Convert ECMA Script 5 JavaScript to Google Tag Manager Script_
 
 <br>
 
+## Table of contents
+
+- [Installation](#install)
+  - [Project](#install-project)
+    - [`git` CLI](#install-project-git)
+    - [Browser](#install-project-browser)
+  - [Dependencies](#install-dependencies)
+  - [TypeScript](#install-typescript)
+- [Why was this script created?](#why)
+- [How to convert `JavaScript` to `ES5` and then to `GtmScript`](#how-to)
+  - [Step 1 (downgrade to `ES5` with `tsc`)](#how-to-step-1)
+    - [Example](#how-to-step-1-example)
+  - [Step 2 (format to `GtmScript` using](#how-to-step-2) [this `script`](https://github.com/tomasfn87/wa-tools/blob/main/convertES5JsToGtmScript/convert_es5_javascript_to_gtmscript.js#L9)
+    - [Example](#how-to-step-2-example)
+
+<br>
+
 - `convertES5JsToGtmScript` is a tool to help converting __JavaScript__ to __Google Tag Manager Script__ (`gtmscript`).
 
 ---
 
 <br>
 
-## Installation (_download the project and install_ `TypeScript`)
+## <span id="install">Installation (_download the project and install_ `TypeScript`)</span>
 
 <br>
 
-### Project
+### <span id="install-project">Project</span>
 
 - To download only this project from [`wa-tools`](https://github.com/tomasfn87/wa-tools):
 
-#### Using `git` CLI
+#### <span id="install-project-git">Using `git` CLI</span>
 
 ```shell
 git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./convertES5JsToGtmScript && cd convertES5JsToGtmScript && git sparse-checkout set convertES5JsToGtmScript && git checkout && mv convertES5JsToGtmScript/* . && rm -rf {convertES5JsToGtmScript,.git}
@@ -28,7 +45,7 @@ git clone --depth 1 --no-checkout https://github.com/tomasfn87/wa-tools ./conver
 
 ---
 
-#### Using a web browser
+#### <span id="install-project-browser">Using a web browser</span>
 
 1. Go to [Download GitHub Directory](https://download-directory.github.io)
 2. Paste the URL below in the input field and press `Enter` to download only this folder instead of the whole `wa-tools` repository:
@@ -41,7 +58,7 @@ https://github.com/tomasfn87/wa-tools/tree/main/convertES5JsToGtmScript
 
 <br>
 
-### Dependencies
+### <span id="install-dependencies">Dependencies</span>
 
 <br>
 
@@ -53,7 +70,7 @@ npm install
 
 <br>
 
-### TypeScript
+### <span id="install-typescript">TypeScript</span>
 
 <br>
 
@@ -69,7 +86,7 @@ sudo npm i -g typescript tsc ts-node
 
 <br><br>
 
-## Why was this script created?
+## <span id="why">Why was this script created?</span>
 
 <br>
 
@@ -95,18 +112,18 @@ function () { return true; }
 
 <br><br>
 
-## How to convert `JavaScript` to `ES5` and then to `GtmScript`
+## <span id="how-to">How to convert `JavaScript` to `ES5` and then to `GtmScript`</span>
 
 <br>
 
-### _Step 1_)
+### <span id="how-to-step-1">_Step 1_)</span>
 
 - The first step is to convert your `JavaScript` file in a version superior to `ES5` using some transpiler;
 - I use `tsc` (*__TypeScript__* _compiler_), passing the flag `--allowJs` to enable support for non-TypeScript files.
 
 <br>
 
-*__Example__* _- Step 1)_:
+#### <span id="how-to-step-1-example">*__Example__* - _Step 1)_:</span>
 
 - create a folder named `es5` and generate an `ES5` file from any version of `JavaScript` supported by the transpiler:
 
@@ -124,7 +141,7 @@ I personally use this script to write shorter code, mainly by using _arrow funct
 
 <br><br>
 
-### _Step 2_)
+### <span id="how-to-step-2">_Step 2_)</span>
 
 - The second step is to use this script to remove a function expression. A function expression is simply a common `JavaScript` function wrapped by parentheses:
 
@@ -221,11 +238,13 @@ _or_
 "{{myVariable}}"
 ```
 
+<br><br>
+
+#### <span id="how-to-step-2-example">*__Example__* - _Step 2)_:</span>
+
+- running the [script](https://github.com/tomasfn87/wa-tools/blob/main/convertES5JsToGtmScript/convert_es5_javascript_to_gtmscript.js#L9) and getting a `GtmScript` file:<br>
+
 <br>
-
-#### *__Example__* _- Step 2)_:
-
-- running the script and getting a `GtmScript` file:<br>
 
 ```shell
 node convert_es5_javascript_to_gtmscript.js es5/example.js
