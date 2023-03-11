@@ -6,7 +6,7 @@ import remove_quote_outside_double_curly_brackets from './remove_quote_outside_d
 import check_file_extension from './check_file_extension.js'
 
 
-const convert_es6_javascript_to_gtmscript = (input_file, output_file) => {
+const convert_es5_javascript_to_gtmscript = (input_file, output_file) => {
   fs.readFile(input_file, 'utf-8', (err, data) => {
     err && console.error(err)
     if (!data) {
@@ -37,6 +37,6 @@ if (inputs.length < 3) {
     console.error('ERRO:'.red+' o arquivo de entrada deve ter extensão .js.')
   } else {
     const out_file = in_file.replace('.js', '.gtm.js')
-    convert_es6_javascript_to_gtmscript(in_file, out_file)
+    convert_es5_javascript_to_gtmscript(in_file, out_file)
   }
 }
