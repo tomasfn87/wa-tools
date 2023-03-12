@@ -32,11 +32,11 @@ export const findFirstPreviousSiblingTagByCssSelector = (tagElement, cssSelector
 }
 
 export const findFirstNextTagByCssSelector = (tagElement, cssSelector, levelsUp) => {
-    if (!findFirstNextSiblingTag(tagElement, cssSelector)) {
+    if (!findFirstNextSiblingTagByCssSelector(tagElement, cssSelector)) {
         c = 0
         while (c <= levelsUp && tagElement.parentNode) {
-            if (findFirstNextSiblingTag(tagElement, cssSelector)) {
-                return findFirstNextSiblingTag(tagElement, cssSelector)
+            if (findFirstNextSiblingTagByCssSelector(tagElement, cssSelector)) {
+                return findFirstNextSiblingTagByCssSelector(tagElement, cssSelector)
             }
             tagElement = tagElement.parentNode
             if (tagElement.matches(cssSelector)) {
