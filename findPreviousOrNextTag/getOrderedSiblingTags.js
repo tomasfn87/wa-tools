@@ -9,7 +9,7 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
         s = 'both'
     }
     // Previous siblings
-    if ((s=='both' || s=='previous') && tagElement.previousElementSibling) {
+    if (s=='both' || s=='previous') {
         orderedSiblings.siblings.previous = []
         currentTag = tagElement
         while (currentTag.previousElementSibling) {
@@ -18,7 +18,7 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
         }
     }
     // Next siblings
-    if ((s=='both' || s=='next') && tagElement.previousElementSibling) {
+    if (s=='both' || s=='next') {
         orderedSiblings.siblings.next = []
         currentTag = tagElement
         while (currentTag.nextElementSibling) {
@@ -34,7 +34,7 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
             return a.concat(orderedSiblings.siblings.next.slice())
         })
         // Adding tagElement position in the Ordered siblings array to main object
-        orderedSiblings.tagPosition = (() => orderedSiblings.siblings.previous.length)
+        orderedSiblings.tagPosition = (() => orderedSiblings.siblings.previous.length || 0)
     }
     return orderedSiblings
 }
