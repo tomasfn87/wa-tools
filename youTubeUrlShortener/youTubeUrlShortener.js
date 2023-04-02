@@ -13,3 +13,8 @@ const youTubeUrlShortener = (ytUrl) => {
 }
 
 export default youTubeUrlShortener;
+
+if (process.argv.length > 2) {
+    let youTubeUrl = process.argv[2];
+    console.log("https://" + youTubeUrlShortener(youTubeUrl));
+}
