@@ -31,7 +31,7 @@ https://github.com/tomasfn87/wa-tools/tree/main/youTubeUrlShortener
 
 ## *Examples*
 
-> The comments represent the results.
+> *The comments represent the results.*
 
 ```javascript
 youTubeUrlShortener(
@@ -55,4 +55,10 @@ youTubeUrlShortener(
 youTubeUrlShortener(
     "http://youtu.be/I845O57ZSy4" // -> youtu.be/I845O57ZSy4
 )
+```
+
+### *Passing URL as CLI argument*
+
+```shell
+node youTubeUrlShortener.js "https://m.youtube.com/watch?v=I845O57ZSy4"
 ```
