@@ -29,9 +29,9 @@ const getOrderedSiblingTags = (tagElement, s='both') => {
     if (s=='both') {
         // Adding Ordered siblings array to main object
         orderedSiblings.toArray = (() => {
-            a = orderedSiblings.siblings.previous.slice()
-            a.push(orderedSiblings.tag)
-            return a.concat(orderedSiblings.siblings.next.slice())
+            let tags = orderedSiblings.siblings.previous.slice()
+            tags.push(orderedSiblings.tag)
+            return tags.concat(orderedSiblings.siblings.next.slice())
         })
         // Adding tagElement position in the Ordered siblings array to main object
         orderedSiblings.tagPosition = (() => orderedSiblings.siblings.previous.length || 0)
