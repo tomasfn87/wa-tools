@@ -12,7 +12,7 @@ const youTubeUrlShortener = (ytUrl) => {
     return ytUrl
 }
 
-export default youTubeUrlShortener;
+export default youTubeUrlShortener
 
 if (process.argv.length > 2) {
     let youTubeUrl = process.argv[2]
