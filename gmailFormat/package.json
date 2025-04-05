@@ -1,0 +1,20 @@
+{
+  "name": "gmail-format",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "main.js",
+  "scripts": {
+    "test": "node gmailFormat.test.js "
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/wa-tools/gmail-format"
+  },
+  "keywords": [
+    "gmail",
+    "test"
+  ],
+  "author": "tomasfn87",
+  "license": "ISC"
+}
