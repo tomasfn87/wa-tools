@@ -35,28 +35,28 @@ export default class Test {
         for (let i=0; i<tests.length; i++) {
             const test = this.fn(tests[i].input);
             process.stdout.write(
-                '\x1b[93mCase\x1b[0m:            '
+                '\x1b[93m' + 'Case\x1b[0m:            '
                 + tests[i].input
-                + '\n\x1b[33mExpected output\x1b[0m: '
+                + '\n\x1b[33m' + 'Expected output' + '\x1b[0m: '
                 + tests[i].expectedOutput
-                + '\n\x1b[96mActual output\x1b[0m:   '
+                + '\n\x1b[96m' + 'Actual output' + '\x1b[0m:   '
                 + test + '\n-> ');
             if (test == tests[i].expectedOutput) {
-                console.log('\x1b[32mOk\x1b[0m');
+                console.log('\x1b[32m' + 'Ok' + '\x1b[0m');
             } else {
-                console.log('\x1b[91mFail\x1b[0m');
+                console.log('\x1b[91m' + 'Fail' + '\x1b[0m');
                 errors++
             }
             i != (tests.length - 1) && console.log()
         }
         console.log();
         if (errors === 0) {
-            console.log('\x1b[32mTest passed ('
+            console.log('\x1b[32m' + 'Test passed ('
             + tests.length + ' test'
             + (tests.length===1?'':'s') + ').\x1b[0m');
             return
         }
-        console.log('\x1b[91mTest failed ('
+        console.log('\x1b[91m' + 'Test failed ('
             + errors + ' error' + (errors===1?'':'s') + ' out of '
             + tests.length + ' test' + (tests.length===1?'':'s') + ').\x1b[0m')
     }
